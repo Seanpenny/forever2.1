@@ -1,13 +1,13 @@
-/* Forever Fit Gym Website - Green Theme with Matrix Warp Effect */
+/* Forever Fit Gym Website - Professional Black & White Theme */
 
 :root {
-    /* Professional Black & White with Minimal Green Accents */
-    --lime-green: #39FF14;
-    --lime-green-dark: #2ECC00;
-    --lime-green-light: #7AFF5C;
-    --green-accent: #00FF41;
-    --green-subtle: rgba(57, 255, 20, 0.2);
-    --green-minimal: rgba(57, 255, 20, 0.1);
+    /* Professional Black & White Theme */
+    --lime-green: #FFFFFF;
+    --lime-green-dark: #CCCCCC;
+    --lime-green-light: #FFFFFF;
+    --green-accent: #FFFFFF;
+    --green-subtle: rgba(255, 255, 255, 0.2);
+    --green-minimal: rgba(255, 255, 255, 0.1);
     --dark-bg: #000000;
     --dark-surface: #0F0F0F;
     --dark-surface-light: #1A1A1A;
@@ -81,13 +81,13 @@ body {
     object-fit: cover;
     border-radius: 10px;
     border: 2px solid var(--lime-green);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
 }
 
 .logo-image:hover {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
 }
 
 .logo h1 {
@@ -175,16 +175,16 @@ body {
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     background: rgba(26, 26, 26, 0.9);
-    border: 2px solid rgba(57, 255, 20, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .gym-rules-btn:hover {
-    background: rgba(57, 255, 20, 0.2);
-    border-color: rgba(57, 255, 20, 1);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
 }
 
@@ -201,7 +201,7 @@ body {
     height: 24px;
     border-radius: 4px;
     object-fit: cover;
-    border: 1px solid rgba(57, 255, 20, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -242,7 +242,7 @@ body {
     gap: 0.5rem;
     padding: 0.6rem 1rem;
     background: rgba(0, 0, 0, 0.85);
-    border: 2px solid rgba(57, 255, 20, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -251,9 +251,9 @@ body {
 }
 
 .gym-rules-btn-corner:hover {
-    background: rgba(57, 255, 20, 0.15);
-    border-color: rgba(57, 255, 20, 1);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
 }
 
@@ -270,7 +270,7 @@ body {
     height: 24px;
     border-radius: 4px;
     object-fit: cover;
-    border: 1px solid rgba(57, 255, 20, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* Hero Background Image - Slides from Bottom */
@@ -360,6 +360,7 @@ body {
     color: var(--lime-green);
     margin-bottom: 1rem;
     letter-spacing: 3px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .hero-subtitle {
@@ -387,7 +388,7 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
@@ -396,7 +397,7 @@ body {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
     background: var(--lime-green-light);
 }
 
@@ -416,10 +417,10 @@ body {
 }
 
 .cta-secondary:hover {
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-color: var(--lime-green-light);
     color: var(--lime-green-light);
-    box-shadow: 0 6px 20px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
 .cta-button-secondary {
@@ -429,10 +430,10 @@ body {
 }
 
 .cta-button-secondary:hover {
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-color: var(--lime-green-light);
     color: var(--lime-green-light);
-    box-shadow: 0 6px 20px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Scroll indicator removed - replaced with two hero buttons */
@@ -756,14 +757,14 @@ body {
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--lime-green);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
     background: var(--dark-surface);
 }
 
 .feature-card:hover .feature-icon-wrapper {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
     border-color: var(--lime-green-light);
 }
 
@@ -880,15 +881,15 @@ body {
 }
 
 .founder-badge {
-    background: rgba(57, 255, 20, 0.15);
-    color: rgba(57, 255, 20, 0.9);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 1px solid rgba(57, 255, 20, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .founder-name {
@@ -929,9 +930,9 @@ body {
 }
 
 .founder-btn:hover {
-    background: rgba(57, 255, 20, 0.1);
-    border-color: rgba(57, 255, 20, 0.5);
-    color: rgba(57, 255, 20, 0.9);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 768px) {
@@ -982,7 +983,7 @@ body {
 
 .leader-card {
     background: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 2.5rem;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -998,7 +999,7 @@ body {
 .leader-card:hover {
     transform: translateY(-10px);
     border-color: var(--lime-green);
-    box-shadow: 0 15px 40px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.25);
 }
 
 .leader-image-container {
@@ -1012,7 +1013,7 @@ body {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(57, 255, 20, 0.5);
+    border: 4px solid rgba(255, 255, 255, 0.3);
     transition: all 0.4s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
@@ -1020,7 +1021,7 @@ body {
 .leader-card:hover .leader-image {
     transform: scale(1.1);
     border-color: var(--lime-green);
-    box-shadow: 0 15px 40px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
 }
 
 .leader-badge {
@@ -1037,7 +1038,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     white-space: nowrap;
-    box-shadow: 0 5px 20px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
 }
 
 .founder-badge {
@@ -1083,13 +1084,13 @@ body {
 }
 
 .cert-badge {
-    background: rgba(57, 255, 20, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     color: var(--lime-green);
     padding: 0.4rem 0.9rem;
     border-radius: 15px;
     font-size: 0.75rem;
     font-weight: 600;
-    border: 1px solid rgba(57, 255, 20, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .leader-link-btn {
@@ -1109,7 +1110,7 @@ body {
 .leader-link-btn:hover {
     background: var(--lime-green-light);
     transform: translateX(5px);
-    box-shadow: 0 5px 20px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
 }
 
 .partnership-statement {
@@ -1117,7 +1118,7 @@ body {
     padding: 2rem;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     text-align: center;
 }
 
@@ -1171,7 +1172,7 @@ body {
     border-radius: 20px;
     object-fit: cover;
     border: 4px solid var(--lime-green);
-    box-shadow: 0 15px 40px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.25);
 }
 
 .founder-badge-hero {
@@ -1251,7 +1252,7 @@ body {
 
 .leadership-tab {
     background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     color: var(--text-light);
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -1269,16 +1270,16 @@ body {
 
 .leadership-tab:hover {
     border-color: var(--lime-green);
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
 }
 
 .leadership-tab.active {
     background: var(--lime-green);
     color: var(--text-dark);
     border-color: var(--lime-green);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 .leadership-tier-content {
@@ -1298,7 +1299,7 @@ body {
 
 .leadership-card-enhanced {
     background: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 2rem;
     transition: all 0.4s ease;
@@ -1308,7 +1309,7 @@ body {
 .leadership-card-enhanced:hover {
     border-color: var(--lime-green);
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
 }
 
 .leadership-card-header {
@@ -1328,7 +1329,7 @@ body {
     height: 120px;
     border-radius: 15px;
     object-fit: cover;
-    border: 3px solid rgba(57, 255, 20, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.3);
     transition: all 0.4s ease;
 }
 
@@ -1413,7 +1414,7 @@ body {
     padding: 2rem;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .athlete-gallery {
@@ -1539,7 +1540,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(57, 255, 20, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     border: 2px solid var(--lime-green);
     color: var(--lime-green);
     width: 50px;
@@ -1554,13 +1555,13 @@ body {
     font-weight: 900;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .carousel-arrow:hover {
     background: var(--lime-green);
     color: var(--text-dark);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -1591,7 +1592,7 @@ body {
 
 .trainer-card:hover {
     border-color: var(--lime-green);
-    box-shadow: 0 0 40px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
     transform: translateY(-10px);
 }
 
@@ -1623,7 +1624,7 @@ body {
     max-height: 100%;
     object-fit: contain;
     object-position: bottom center;
-    filter: drop-shadow(0 0 20px rgba(57, 255, 20, 0.3));
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
     transition: transform 0.4s ease;
 }
 
@@ -1747,7 +1748,7 @@ body {
 }
 
 .trainer-modal-close:hover {
-    color: rgba(57, 255, 20, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     transform: rotate(90deg);
 }
 
@@ -1822,7 +1823,7 @@ body {
     content: "✓";
     position: absolute;
     left: 0;
-    color: rgba(57, 255, 20, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 900;
 }
 
@@ -1881,7 +1882,7 @@ body {
 
 .trainer-tab {
     background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     color: var(--text-light);
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -1906,7 +1907,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(57, 255, 20, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
     transition: left 0.5s ease;
 }
 
@@ -1916,16 +1917,16 @@ body {
 
 .trainer-tab:hover {
     border-color: var(--lime-green);
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
 }
 
 .trainer-tab.active {
     background: var(--lime-green);
     color: var(--text-dark);
     border-color: var(--lime-green);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
     transform: scale(1.05);
 }
 
@@ -1982,7 +1983,7 @@ body {
 
 .trainer-card-enhanced {
     background: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 2rem;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -2015,7 +2016,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(57, 255, 20, 0.05) 0%, transparent 50%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -2023,7 +2024,7 @@ body {
 .trainer-card-enhanced:hover {
     border-color: var(--lime-green);
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
 }
 
 .trainer-card-enhanced:hover::before {
@@ -2047,7 +2048,7 @@ body {
     height: 120px;
     border-radius: 15px;
     object-fit: cover;
-    border: 3px solid rgba(57, 255, 20, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.3);
     transition: all 0.4s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
@@ -2055,7 +2056,7 @@ body {
 .trainer-card-enhanced:hover .trainer-image-enhanced {
     transform: scale(1.1) rotate(2deg);
     border-color: var(--lime-green);
-    box-shadow: 0 8px 30px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
 }
 
 .role-badge {
@@ -2072,13 +2073,13 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     white-space: nowrap;
-    box-shadow: 0 3px 15px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 3px 15px rgba(255, 255, 255, 0.3);
     animation: badgePulse 2s ease-in-out infinite;
 }
 
 @keyframes badgePulse {
-    0%, 100% { box-shadow: 0 3px 15px rgba(57, 255, 20, 0.5); }
-    50% { box-shadow: 0 3px 25px rgba(57, 255, 20, 0.8); }
+    0%, 100% { box-shadow: 0 3px 15px rgba(255, 255, 255, 0.3); }
+    50% { box-shadow: 0 3px 25px rgba(255, 255, 255, 0.6); }
 }
 
 .head-coach-badge {
@@ -2088,7 +2089,7 @@ body {
 }
 
 .co-owner-badge {
-    background: linear-gradient(135deg, var(--lime-green), #2ECC00);
+    background: linear-gradient(135deg, var(--lime-green), #CCCCCC);
 }
 
 .external-badge {
@@ -2122,18 +2123,18 @@ body {
 }
 
 .specialty-tag {
-    background: rgba(57, 255, 20, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     color: var(--lime-green);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.75rem;
     font-weight: 600;
-    border: 1px solid rgba(57, 255, 20, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
 }
 
 .specialty-tag:hover {
-    background: rgba(57, 255, 20, 0.25);
+    background: rgba(255, 255, 255, 0.15);
     transform: scale(1.05);
 }
 
@@ -2149,7 +2150,7 @@ body {
 }
 
 .accordion-item {
-    border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     margin-bottom: 0.5rem;
 }
 
@@ -2171,7 +2172,7 @@ body {
 }
 
 .accordion-header:hover {
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     color: var(--lime-green);
     padding-left: 1.5rem;
 }
@@ -2244,21 +2245,21 @@ body {
 
 .video-link-btn {
     display: inline-block;
-    background: rgba(57, 255, 20, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     color: var(--lime-green);
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 700;
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
 }
 
 .video-link-btn:hover {
-    background: rgba(57, 255, 20, 0.25);
+    background: rgba(255, 255, 255, 0.15);
     border-color: var(--lime-green);
     transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.25);
 }
 
 /* ===== SECTION DIVIDER ===== */
@@ -2343,7 +2344,7 @@ body {
 
 .program-card {
     background: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -2361,7 +2362,7 @@ body {
 .program-card:hover {
     transform: translateY(-10px);
     border-color: var(--lime-green);
-    box-shadow: 0 15px 40px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.25);
 }
 
 .program-card-image {
@@ -2433,13 +2434,13 @@ body {
 }
 
 .feature-badge {
-    background: rgba(57, 255, 20, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     color: var(--lime-green);
     padding: 0.4rem 0.8rem;
     border-radius: 15px;
     font-size: 0.75rem;
     font-weight: 600;
-    border: 1px solid rgba(57, 255, 20, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .program-btn {
@@ -2459,14 +2460,14 @@ body {
 .program-btn:hover {
     background: var(--lime-green-light);
     transform: translateX(5px);
-    box-shadow: 0 5px 20px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
 }
 
 /* Sports Conditioning Details */
 .sports-conditioning-details {
     margin-top: 5rem;
     padding-top: 3rem;
-    border-top: 2px solid rgba(57, 255, 20, 0.2);
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .section-subtitle {
@@ -2486,7 +2487,7 @@ body {
 
 .conditioning-card {
     background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
@@ -2497,7 +2498,7 @@ body {
 .conditioning-card:hover {
     border-color: var(--lime-green);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
 .conditioning-icon {
@@ -2598,7 +2599,7 @@ body {
 .kids-mma-nav-section {
     padding: 2rem 0;
     background: rgba(0, 0, 0, 0.8);
-    border-bottom: 2px solid rgba(57, 255, 20, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
     position: sticky;
     top: 70px;
     z-index: 100;
@@ -2614,7 +2615,7 @@ body {
 
 .mma-nav-btn-page {
     background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     color: var(--text-light);
     padding: 1rem 2rem;
     font-size: 1rem;
@@ -2632,16 +2633,16 @@ body {
 
 .mma-nav-btn-page:hover {
     border-color: var(--lime-green);
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
 }
 
 .mma-nav-btn-page.active {
     background: var(--lime-green);
     color: var(--text-dark);
     border-color: var(--lime-green);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 .btn-icon {
@@ -2687,7 +2688,7 @@ body {
 
 .about-features-box {
     background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 15px;
     padding: 2rem;
     backdrop-filter: blur(10px);
@@ -2710,7 +2711,7 @@ body {
     color: rgba(255, 255, 255, 0.9);
     padding: 0.8rem 0;
     font-size: 1rem;
-    border-bottom: 1px solid rgba(57, 255, 20, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .highlights-list li:last-child {
@@ -2728,7 +2729,7 @@ body {
 .kids-mma-carousel-container {
     overflow: hidden;
     border-radius: 20px;
-    border: 3px solid rgba(57, 255, 20, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     background: rgba(0, 0, 0, 0.6);
 }
@@ -2778,14 +2779,14 @@ body {
     transition: all 0.3s ease;
     z-index: 10;
     backdrop-filter: blur(10px);
-    box-shadow: 0 5px 20px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
 }
 
 .carousel-btn:hover {
     background: var(--lime-green);
     color: var(--text-dark);
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 8px 30px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
 }
 
 .carousel-btn:active {
@@ -2818,20 +2819,20 @@ body {
     height: 12px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .indicator:hover {
-    background: rgba(57, 255, 20, 0.5);
+    background: rgba(255, 255, 255, 0.3);
     transform: scale(1.2);
 }
 
 .indicator.active {
     background: var(--lime-green);
     border-color: var(--lime-green);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.8);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
     transform: scale(1.3);
 }
 
@@ -2844,7 +2845,7 @@ body {
 
 .schedule-info-box {
     background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 3rem;
     backdrop-filter: blur(10px);
@@ -2865,7 +2866,7 @@ body {
 
 .time-slot-card {
     background: rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
@@ -2875,7 +2876,7 @@ body {
 .time-slot-card:hover {
     border-color: var(--lime-green);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
 .time-slot-header {
@@ -2916,7 +2917,7 @@ body {
 
 .age-group-card-enhanced {
     background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 2.5rem;
     text-align: center;
@@ -2927,7 +2928,7 @@ body {
 .age-group-card-enhanced:hover {
     border-color: var(--lime-green);
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.25);
 }
 
 .age-group-number {
@@ -2935,7 +2936,7 @@ body {
     font-weight: 900;
     color: var(--lime-green);
     margin-bottom: 1rem;
-    text-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .age-group-card-enhanced h3 {
@@ -2983,7 +2984,7 @@ body {
 
 .benefit-card-enhanced {
     background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
@@ -2994,7 +2995,7 @@ body {
 .benefit-card-enhanced:hover {
     border-color: var(--lime-green);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
 .benefit-icon {
@@ -3056,7 +3057,7 @@ body {
 }
 
 .mma-schedule-info strong {
-    color: rgba(57, 255, 20, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 900;
 }
 
@@ -3076,16 +3077,16 @@ body {
     height: auto;
     max-width: 200px;
     max-height: 200px;
-    filter: drop-shadow(0 0 20px rgba(57, 255, 20, 0.6));
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
     animation: logoGlow 3s ease-in-out infinite;
 }
 
 @keyframes logoGlow {
     0%, 100% {
-        filter: drop-shadow(0 0 20px rgba(57, 255, 20, 0.6));
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
     }
     50% {
-        filter: drop-shadow(0 0 30px rgba(57, 255, 20, 0.9));
+        filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.9));
     }
 }
 
@@ -3096,7 +3097,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
-    background: rgba(57, 255, 20, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     border: 3px solid var(--lime-green);
     border-radius: 50%;
     width: 100px;
@@ -3108,13 +3109,13 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 .video-play-overlay:hover {
     background: var(--lime-green);
     transform: translate(-50%, -50%) scale(1.1);
-    box-shadow: 0 0 50px rgba(57, 255, 20, 0.8);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.6);
 }
 
 .video-play-overlay span {
@@ -3173,16 +3174,16 @@ body {
     max-height: 400px;
     width: auto;
     height: auto;
-    filter: drop-shadow(0 0 30px rgba(57, 255, 20, 0.8));
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
     animation: logoGlow 3s ease-in-out infinite;
 }
 
 @keyframes logoGlow {
     0%, 100% {
-        filter: drop-shadow(0 0 30px rgba(57, 255, 20, 0.8));
+        filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
     }
     50% {
-        filter: drop-shadow(0 0 50px rgba(57, 255, 20, 1));
+        filter: drop-shadow(0 0 50px rgba(255, 255, 255, 1));
     }
 }
 
@@ -3235,8 +3236,8 @@ body {
 }
 
 .mma-nav-btn {
-    background: rgba(57, 255, 20, 0.15);
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     color: var(--lime-green);
     padding: 0.65rem 1rem;
     font-size: 0.8rem;
@@ -3246,7 +3247,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     text-transform: uppercase;
     letter-spacing: 0.8px;
     width: 100%;
@@ -3259,9 +3260,9 @@ body {
 }
 
 .mma-nav-btn:hover {
-    background: rgba(57, 255, 20, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     color: var(--lime-green);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     transform: translateX(-5px);
 }
 
@@ -3280,7 +3281,7 @@ body {
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
     pointer-events: none;
     z-index: 1000;
     white-space: normal;
@@ -3501,7 +3502,7 @@ body {
 }
 
 .simple-nav-btn {
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border: none;
     color: var(--lime-green);
     padding: 0.7rem 1.5rem;
@@ -3512,7 +3513,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     text-transform: uppercase;
     letter-spacing: 1px;
     min-width: 150px;
@@ -3520,9 +3521,9 @@ body {
 }
 
 .simple-nav-btn:hover {
-    background: rgba(57, 255, 20, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     color: var(--lime-green);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     transform: translateX(-5px);
 }
 
@@ -3540,7 +3541,7 @@ body {
     visibility: hidden;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
     pointer-events: none;
 }
 
@@ -3678,7 +3679,7 @@ body {
 .expanding-card:hover {
     flex: 3;
     z-index: 10;
-    box-shadow: 0 8px 40px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 8px 40px rgba(255, 255, 255, 0.25);
     transform: scale(1.02);
 }
 
@@ -3835,13 +3836,13 @@ body {
 .service-icon {
     width: 80px;
     height: 80px;
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .service-icon-text {
@@ -3865,11 +3866,11 @@ body {
 }
 
 .service-schedule {
-    background: rgba(57, 255, 20, 0.05);
+    background: rgba(255, 255, 255, 0.05);
     padding: 1rem;
     border-radius: 10px;
     margin-bottom: 1.5rem;
-    border-left: 3px solid rgba(57, 255, 20, 0.3);
+    border-left: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .service-schedule p {
@@ -3894,9 +3895,9 @@ body {
 }
 
 .service-btn:hover {
-    background: rgba(57, 255, 20, 0.1);
-    border-color: rgba(57, 255, 20, 0.5);
-    color: rgba(57, 255, 20, 0.9);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .service-categories {
@@ -3918,7 +3919,7 @@ body {
 }
 
 .category-item:hover {
-    border-color: rgba(57, 255, 20, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
 }
 
@@ -3993,7 +3994,7 @@ body {
 .facility-card:hover {
     transform: scale(1.1) translateY(-10px);
     z-index: 10;
-    box-shadow: 0 8px 40px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 8px 40px rgba(255, 255, 255, 0.25);
 }
 
 .facilities-grid:hover .facility-card:not(:hover) {
@@ -4121,7 +4122,7 @@ body {
 
 .zone-card:hover {
     border-color: var(--lime-green);
-    box-shadow: 0 8px 30px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
     transform: translateY(-10px);
 }
 
@@ -4208,7 +4209,7 @@ body {
 
 .package-card:hover {
     border-color: var(--lime-green);
-    box-shadow: 0 8px 30px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
     transform: translateY(-10px);
 }
 
@@ -4295,7 +4296,7 @@ body {
 .package-join-btn:hover {
     background: var(--lime-green-light);
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -4387,7 +4388,7 @@ body {
 
 .filter-btn {
     background: rgba(26, 26, 26, 0.8);
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     color: var(--text-light);
     padding: 0.8rem 2rem;
     border-radius: 25px;
@@ -4402,7 +4403,7 @@ body {
 
 .filter-btn:hover {
     border-color: var(--lime-green);
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     transform: translateY(-2px);
 }
 
@@ -4410,7 +4411,7 @@ body {
     background: var(--lime-green);
     color: var(--text-dark);
     border-color: var(--lime-green);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 /* Events Carousel Wrapper */
@@ -4424,7 +4425,7 @@ body {
 }
 
 .carousel-nav-btn {
-    background: rgba(57, 255, 20, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     border: 2px solid var(--lime-green);
     color: var(--lime-green);
     width: 50px;
@@ -4444,7 +4445,7 @@ body {
 .carousel-nav-btn:hover {
     background: var(--lime-green);
     color: var(--text-dark);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     transform: scale(1.1);
 }
 
@@ -4481,7 +4482,7 @@ body {
 }
 
 .events-feed::-webkit-scrollbar-thumb:hover {
-    background: rgba(57, 255, 20, 0.8);
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .event-card {
@@ -4502,7 +4503,7 @@ body {
 
 .event-card:hover {
     border-color: var(--lime-green);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
     transform: translateY(-5px);
 }
 
@@ -4545,7 +4546,7 @@ body {
 .upcoming-badge {
     background: var(--lime-green);
     color: var(--text-dark);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .past-badge {
@@ -4568,14 +4569,14 @@ body {
     justify-content: center;
     width: 45px;
     height: 45px;
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border: 2px solid var(--lime-green);
     border-radius: 10px;
     margin-bottom: 0.8rem;
     position: absolute;
     top: -22px;
     left: 1rem;
-    box-shadow: 0 0 12px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
 }
 
 .date-day {
@@ -4620,7 +4621,7 @@ body {
     margin-bottom: 0.8rem;
     padding-top: 0.6rem;
     font-size: 0.75rem;
-    border-top: 1px solid rgba(57, 255, 20, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .event-time,
@@ -4646,12 +4647,12 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     align-self: flex-start;
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .event-btn:hover {
     background: var(--lime-green-light);
-    box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
 }
 
@@ -4794,7 +4795,7 @@ body {
 .contact-form input,
 .contact-form textarea {
     background: rgba(10, 10, 10, 0.8);
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 1rem;
     color: var(--text-light);
@@ -4806,7 +4807,7 @@ body {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--lime-green);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
 }
 
 .contact-form input::placeholder,
@@ -4883,7 +4884,7 @@ body {
     height: auto;
     border-radius: 30px;
     filter: 
-        drop-shadow(0 0 30px rgba(57, 255, 20, 0.4))
+        drop-shadow(0 0 30px rgba(255, 255, 255, 0.25))
         brightness(0.95)
         contrast(1.1);
     transition: all 0.4s ease;
@@ -4891,8 +4892,8 @@ body {
     background: linear-gradient(135deg, var(--dark-surface) 0%, var(--dark-bg) 100%);
     padding: 20px;
     box-shadow: 
-        0 0 40px rgba(57, 255, 20, 0.3),
-        inset 0 0 40px rgba(57, 255, 20, 0.1);
+        0 0 40px rgba(255, 255, 255, 0.2),
+        inset 0 0 40px rgba(255, 255, 255, 0.08);
 }
 
 .mobile-app-image-container::before {
@@ -4902,7 +4903,7 @@ body {
     left: -20px;
     right: -20px;
     bottom: -20px;
-    background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(0, 255, 65, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%);
     border-radius: 40px;
     z-index: -1;
     filter: blur(20px);
@@ -4911,12 +4912,12 @@ body {
 .mobile-app-image:hover {
     transform: scale(1.05);
     filter: 
-        drop-shadow(0 0 50px rgba(57, 255, 20, 0.6))
+        drop-shadow(0 0 50px rgba(255, 255, 255, 0.4))
         brightness(1.05)
         contrast(1.15);
     box-shadow: 
-        0 0 60px rgba(57, 255, 20, 0.5),
-        inset 0 0 50px rgba(57, 255, 20, 0.15);
+        0 0 60px rgba(255, 255, 255, 0.3),
+        inset 0 0 50px rgba(255, 255, 255, 0.1);
 }
 
 .mobile-app-content {
@@ -4989,7 +4990,7 @@ body {
     transition: all 0.3s ease;
     box-shadow: 
         0 0 20px var(--lime-green),
-        0 4px 15px rgba(57, 255, 20, 0.4);
+        0 4px 15px rgba(255, 255, 255, 0.25);
     border: 2px solid var(--lime-green);
 }
 
@@ -4998,7 +4999,7 @@ body {
     transform: translateY(-5px);
     box-shadow: 
         0 0 40px var(--lime-green),
-        0 8px 25px rgba(57, 255, 20, 0.6);
+        0 8px 25px rgba(255, 255, 255, 0.4);
 }
 
 .download-icon {
@@ -5019,7 +5020,7 @@ body {
 
 .ai-feature-btn {
     background: rgba(26, 26, 26, 0.8);
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 1.2rem 1.5rem;
     cursor: pointer;
@@ -5034,14 +5035,14 @@ body {
 
 .ai-feature-btn:hover {
     border-color: var(--lime-green);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
     background: rgba(26, 26, 26, 0.95);
 }
 
 .ai-feature-btn.active {
     border-color: var(--lime-green);
-    background: rgba(57, 255, 20, 0.1);
-    box-shadow: 0 0 25px rgba(57, 255, 20, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
 }
 
 .ai-feature-btn.active .ai-arrow {
@@ -5086,7 +5087,7 @@ body {
     opacity: 1;
     padding: 1.5rem;
     border-color: var(--lime-green);
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
@@ -5195,7 +5196,7 @@ body {
 .join-email-input {
     flex: 1;
     background: rgba(26, 26, 26, 0.8);
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 1rem 1.5rem;
     color: var(--text-light);
@@ -5207,7 +5208,7 @@ body {
 .join-email-input:focus {
     outline: none;
     border-color: var(--lime-green);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
 }
 
 .join-email-input::placeholder {
@@ -5268,7 +5269,7 @@ body {
 
 .package-card:hover {
     border-color: var(--lime-green);
-    box-shadow: 0 0 40px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
     transform: translateY(-10px);
 }
 
@@ -5335,7 +5336,7 @@ body {
     padding-left: 2rem;
     position: relative;
     line-height: 1.6;
-    border-bottom: 1px solid rgba(57, 255, 20, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .package-features li:last-child {
@@ -5445,7 +5446,7 @@ body {
     font-weight: 600;
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
-    border: 2px solid rgba(57, 255, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
@@ -5456,9 +5457,9 @@ body {
 }
 
 .github-link:hover {
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border-color: var(--lime-green);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
 }
 

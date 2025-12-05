@@ -50,27 +50,27 @@
     text-transform: uppercase;
     letter-spacing: 4px;
     text-shadow: 
-        0 0 10px rgba(57, 255, 20, 0.8),
-        0 0 20px rgba(57, 255, 20, 0.6),
-        0 0 30px rgba(57, 255, 20, 0.4),
-        0 0 40px rgba(57, 255, 20, 0.2);
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.25),
+        0 0 40px rgba(255, 255, 255, 0.15);
     animation: glowPulse 2s ease-in-out infinite alternate;
 }
 
 @keyframes glowPulse {
     from {
         text-shadow: 
-            0 0 10px rgba(57, 255, 20, 0.8),
-            0 0 20px rgba(57, 255, 20, 0.6),
-            0 0 30px rgba(57, 255, 20, 0.4),
-            0 0 40px rgba(57, 255, 20, 0.2);
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 20px rgba(255, 255, 255, 0.4),
+            0 0 30px rgba(255, 255, 255, 0.25),
+            0 0 40px rgba(255, 255, 255, 0.15);
     }
     to {
         text-shadow: 
-            0 0 15px rgba(57, 255, 20, 1),
-            0 0 25px rgba(57, 255, 20, 0.8),
-            0 0 35px rgba(57, 255, 20, 0.6),
-            0 0 45px rgba(57, 255, 20, 0.4);
+            0 0 15px rgba(255, 255, 255, 1),
+            0 0 25px rgba(255, 255, 255, 0.6),
+            0 0 35px rgba(255, 255, 255, 0.4),
+            0 0 45px rgba(255, 255, 255, 0.25);
     }
 }
 
@@ -87,10 +87,10 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 
-        0 0 10px rgba(57, 255, 20, 0.8),
-        0 0 20px rgba(57, 255, 20, 0.6),
-        0 0 30px rgba(57, 255, 20, 0.4);
-    border-bottom: 3px solid rgba(57, 255, 20, 0.5);
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.25);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 1rem;
 }
 
@@ -101,13 +101,13 @@
 .rules-subtitle {
     font-size: 1.8rem;
     font-weight: 700;
-    color: rgba(57, 255, 20, 1);
+    color: rgba(255, 255, 255, 1);
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 
-        0 0 8px rgba(57, 255, 20, 0.8),
-        0 0 15px rgba(57, 255, 20, 0.6);
+        0 0 8px rgba(255, 255, 255, 0.6),
+        0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 .rules-list {
@@ -124,42 +124,42 @@
     position: relative;
     line-height: 1.8;
     text-shadow: 
-        0 0 5px rgba(57, 255, 20, 0.5),
-        0 0 10px rgba(57, 255, 20, 0.3);
-    border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+        0 0 5px rgba(255, 255, 255, 0.3),
+        0 0 10px rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
 }
 
 .rules-list li:hover {
     padding-left: 2.5rem;
-    color: rgba(57, 255, 20, 1);
+    color: rgba(255, 255, 255, 1);
     text-shadow: 
-        0 0 8px rgba(57, 255, 20, 0.8),
-        0 0 15px rgba(57, 255, 20, 0.6);
+        0 0 8px rgba(255, 255, 255, 0.6),
+        0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 .rules-list li::before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: rgba(57, 255, 20, 1);
+    color: rgba(255, 255, 255, 1);
     font-weight: 900;
     font-size: 1.2rem;
     text-shadow: 
-        0 0 5px rgba(57, 255, 20, 0.8),
-        0 0 10px rgba(57, 255, 20, 0.6);
+        0 0 5px rgba(255, 255, 255, 0.6),
+        0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .rules-divider {
     height: 2px;
     background: linear-gradient(to right, 
         transparent, 
-        rgba(57, 255, 20, 0.5), 
-        rgba(57, 255, 20, 0.8), 
-        rgba(57, 255, 20, 0.5), 
+        rgba(255, 255, 255, 0.3), 
+        rgba(255, 255, 255, 0.6), 
+        rgba(255, 255, 255, 0.3), 
         transparent);
     margin: 3rem 0;
-    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 @keyframes fadeInUp {
@@ -180,16 +180,16 @@
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     background: rgba(26, 26, 26, 0.9);
-    border: 2px solid rgba(57, 255, 20, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .gym-rules-btn:hover {
-    background: rgba(57, 255, 20, 0.2);
-    border-color: rgba(57, 255, 20, 1);
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .gym-rules-text {
@@ -205,7 +205,7 @@
     height: 24px;
     border-radius: 4px;
     object-fit: cover;
-    border: 1px solid rgba(57, 255, 20, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Footer Styles for Gym Rules Page */
@@ -213,7 +213,7 @@
     position: relative;
     z-index: 2;
     background: rgba(10, 10, 10, 0.95);
-    border-top: 2px solid rgba(57, 255, 20, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
     margin-top: 4rem;
 }
 
@@ -230,7 +230,7 @@
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .footer-section p {
@@ -260,8 +260,8 @@
 
 .app-link:hover {
     color: var(--lime-green);
-    background: rgba(57, 255, 20, 0.1);
-    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 .social-links {
@@ -280,12 +280,12 @@
 
 .social-link:hover {
     color: var(--lime-green);
-    background: rgba(57, 255, 20, 0.1);
-    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(57, 255, 20, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding-top: 1.5rem;
     display: flex;
     justify-content: space-between;
