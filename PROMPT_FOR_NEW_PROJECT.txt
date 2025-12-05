@@ -1,0 +1,55 @@
+PROMPT FOR NEW FOREVER FIT PROJECT - COPY AND PASTE THIS WHEN YOU OPEN NEW FOLDER:
+
+========================================
+RESTORE FOREVER FIT WEBSITE FROM VERCEL & GITHUB
+========================================
+
+I need to recreate my Forever Fit website project that matches 100% exactly what is deployed on Vercel. My current files are corrupted, so I need you to scan the live Vercel site, check the GitHub repository, and rebuild the complete project with all HTML, CSS, and JavaScript files.
+
+VERCEL LIVE SITE (TARGET - MUST MATCH 100%):
+https://forever-fit-website.vercel.app/
+
+GITHUB REPOSITORY (SOURCE CODE):
+https://github.com/Seanpenny/forever_fit_website
+
+DIRECT DOWNLOAD LINKS:
+- index.html: https://raw.githubusercontent.com/Seanpenny/forever_fit_website/main/index.html
+- css/styles.css: https://raw.githubusercontent.com/Seanpenny/forever_fit_website/main/css/styles.css
+- js/main.js: https://raw.githubusercontent.com/Seanpenny/forever_fit_website/main/js/main.js
+
+TASKS:
+1. First, scan the Vercel site (https://forever-fit-website.vercel.app/) and document all sections: Navigation, Hero Section, About Section, Personal Trainers Carousel, Kids MMA Section, Media Gallery, Events & News Feed, Contact Form, Mobile App Section, Footer.
+
+2. Download the working code from GitHub repository (https://github.com/Seanpenny/forever_fit_website) - specifically get index.html, css/styles.css, and js/main.js from the main branch.
+
+3. Verify the downloaded code matches what's on Vercel by comparing structure, content, and functionality.
+
+4. Create a clean project structure:
+   - index.html (main HTML file)
+   - css/styles.css (all styles)
+   - js/main.js (all JavaScript)
+   - assets/ folder (for videos/images)
+   - images/ folder (for gallery images)
+
+5. Ensure all file paths are correct and relative (css/styles.css, js/main.js, images/, assets/).
+
+6. Test that the code structure matches the Vercel site exactly - same sections, same content, same functionality.
+
+7. Make sure the project works when opened locally (CSS loads, JavaScript works, all images/assets paths correct).
+
+REQUIREMENTS:
+- Must be 100% identical to Vercel site
+- All sections must match exactly
+- File structure must be clean and organized
+- Code must be properly formatted
+- No corrupted files or encoding issues
+- Project must run immediately after creation
+
+PRIORITY: FAST EXECUTION - I need this working immediately so I can continue development.
+
+========================================
+START NOW - Download from GitHub and create the project files matching Vercel exactly.
+========================================
+
+
+

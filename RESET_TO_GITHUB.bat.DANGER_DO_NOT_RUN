@@ -1,0 +1,10 @@
+@echo off
+echo Resetting to GitHub version...
+git fetch origin
+git reset --hard origin/main
+git clean -fd
+echo Done! Your files now match GitHub.
+pause
+
+
+

@@ -1,0 +1,21 @@
+========================================
+QUICK COPY PROMPT - SHORT VERSION
+========================================
+
+Copy this prompt:
+
+---
+
+Copy all assets and images from my old project folder to the new one.
+
+SOURCE: C:\Users\webbr\Documents\MY APPS\MY GYM MANAGEMENT SYSTEM\FOREVER FIT BOX PROTOTYPE\Forever fit website
+
+Copy these folders to new project:
+- assets/ folder (all videos, images, media files)
+- images/ folder (all gallery images, photos)
+
+Verify all files in index.html exist in the new folders. Make sure paths match. Complete the project setup fast.
+
+---
+
+

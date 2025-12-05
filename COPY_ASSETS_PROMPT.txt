@@ -1,0 +1,73 @@
+========================================
+PROMPT TO COPY ASSETS, IMAGES, AND VIDEOS
+========================================
+
+Copy and paste this when you need to transfer assets:
+
+---
+
+I have created a new Forever Fit website project with HTML, CSS, and JavaScript files. Now I need to copy all the remaining assets, images, and videos from my old corrupted project folder to complete the new project.
+
+SOURCE FOLDER (old corrupted project):
+C:\Users\webbr\Documents\MY APPS\MY GYM MANAGEMENT SYSTEM\FOREVER FIT BOX PROTOTYPE\Forever fit website
+
+DESTINATION FOLDER (new clean project):
+[Your new folder path here]
+
+FILES AND FOLDERS TO COPY:
+
+1. assets/ folder - Contains all videos and media assets:
+   - Green Team .mp4
+   - mma_kids_vid.mp4
+   - splash_enhanced.jpeg
+   - splashenhanced.jpeg
+   - mma background.png
+   - about background.jpg
+   - events backgorind.jpg
+   - gallery abcklgriund.jpg
+   - personaltrianer background.jpg
+   - new image for home.jpg
+   - WhatsApp Video files
+   - All other video/image files in assets/
+
+2. images/ folder - Contains all gallery and content images:
+   - splash enhanced.jpeg
+   - owen_Pt.jpg
+   - PT2.jpg
+   - Q_PT.jpg
+   - FF img2.jpg
+   - forverfit img1.jpg
+   - img3.jpg
+   - mobilr app.jpeg
+   - Screenshot files
+   - ec_champs1.jpg, ec_champs2.jpg, ec_champs3.jpg
+   - eastern _province.jpg
+   - WhatsApp Image files
+   - All other image files
+
+3. Any other important files:
+   - gym-rules.html (if exists)
+   - Any configuration files needed
+
+TASKS:
+1. Scan the source folder and identify all files in assets/ and images/ folders
+2. Copy the entire assets/ folder to the new project destination
+3. Copy the entire images/ folder to the new project destination
+4. Verify all file paths in index.html match the folder structure (assets/, images/)
+5. Ensure no files are missing - check that all referenced images/videos exist
+6. Verify file names match exactly (case-sensitive) between HTML references and actual files
+7. Test that all images and videos load correctly in the new project
+
+REQUIREMENTS:
+- Copy ALL files from assets/ folder
+- Copy ALL files from images/ folder
+- Maintain exact folder structure (assets/ and images/ at root level)
+- Keep original file names exactly as they are
+- Verify all paths in HTML match the copied files
+- Ensure project is complete and ready to run
+
+PRIORITY: Complete this quickly so the project is fully functional with all media files.
+
+---
+
+

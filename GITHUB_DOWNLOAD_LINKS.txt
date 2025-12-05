@@ -1,0 +1,21 @@
+QUICK RESTORE - Download these files:
+
+1. index.html:
+   https://raw.githubusercontent.com/Seanpenny/forever_fit_website/main/index.html
+
+2. css/styles.css:
+   https://raw.githubusercontent.com/Seanpenny/forever_fit_website/main/css/styles.css
+
+3. js/main.js:
+   https://raw.githubusercontent.com/Seanpenny/forever_fit_website/main/js/main.js
+
+INSTRUCTIONS:
+1. Double-click QUICK_RESTORE.bat to download all files
+2. Or manually download each link above
+3. Files will be in RESTORED_FROM_GITHUB folder
+4. Copy them to replace your corrupted files
+
+GitHub Repo: https://github.com/Seanpenny/forever_fit_website
+
+
+

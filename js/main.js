@@ -38,79 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     top: offsetTop,
                     behavior: 'smooth'
                 });
-                
-                // Trigger about section animation if it's the about link
-                if (this.getAttribute('href') === '#about') {
-                    setTimeout(() => {
-                        // Reset flag and trigger animation
-                        window.aboutHasAnimated = false;
-                        animateAboutSection();
-                    }, 700);
-                }
             }
         });
     });
-    
-    // About Section Animation Function - Using CSS animations
-    function animateAboutSection() {
-        const aboutSection = document.getElementById('about');
-        if (!aboutSection) return;
-        
-        const sectionTitle = aboutSection.querySelector('.section-title');
-        const aboutText = aboutSection.querySelector('.about-text');
-        const aboutFeatures = aboutSection.querySelector('.about-features');
-        
-        // Remove animate class first to reset
-        aboutSection.classList.remove('animate');
-        if (sectionTitle) sectionTitle.classList.remove('animate');
-        if (aboutText) aboutText.classList.remove('animate');
-        if (aboutFeatures) aboutFeatures.classList.remove('animate');
-        
-        // Force reflow to reset animations
-        void aboutSection.offsetHeight;
-        
-        // Add animate class to trigger CSS animations (including background image)
-        setTimeout(() => {
-            aboutSection.classList.add('animate');
-            if (sectionTitle) sectionTitle.classList.add('animate');
-            if (aboutText) aboutText.classList.add('animate');
-            if (aboutFeatures) aboutFeatures.classList.add('animate');
-        }, 100);
-    }
-    
-    // Check if about section is in viewport and animate on scroll
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-        window.aboutHasAnimated = false;
-        
-        // Function to trigger animation
-        const triggerAnimation = () => {
-            if (!window.aboutHasAnimated) {
-                window.aboutHasAnimated = true;
-                animateAboutSection();
-            }
-        };
-        
-        // Intersection Observer for scroll trigger
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !window.aboutHasAnimated) {
-                    triggerAnimation();
-                }
-            });
-        }, { threshold: 0.2 });
-        
-        observer.observe(aboutSection);
-        
-        // Check if section is already visible on page load
-        setTimeout(() => {
-            const rect = aboutSection.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-            if (isVisible && !window.aboutHasAnimated) {
-                triggerAnimation();
-            }
-        }, 1000);
-    }
 
     // CTA Button Action
     const ctaButton = document.querySelector('.cta-button');
@@ -186,141 +116,79 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Matrix warp effect enhancement on scroll
-    // Hero Section Background Animation
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        window.heroHasAnimated = false;
+    // About Section Animation Trigger
+    const aboutSection = document.querySelector('.about-section');
+    if (aboutSection && 'IntersectionObserver' in window) {
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
+                    aboutSection.classList.add('animate');
+                    const sectionTitle = aboutSection.querySelector('.section-title');
+                    const aboutText = aboutSection.querySelector('.about-text');
+                    const aboutFeatures = aboutSection.querySelector('.about-features');
+                    
+                    if (sectionTitle) sectionTitle.classList.add('animate');
+                    if (aboutText) aboutText.classList.add('animate');
+                    if (aboutFeatures) aboutFeatures.classList.add('animate');
+                    
+                    aboutObserver.unobserve(aboutSection);
+                }
+            });
+        }, { threshold: 0.2 });
         
-        const triggerHeroAnimation = () => {
-            if (!window.heroHasAnimated) {
-                window.heroHasAnimated = true;
-                heroSection.classList.remove('animate');
-                void heroSection.offsetHeight;
-                setTimeout(() => {
-                    heroSection.classList.add('animate');
-                }, 100);
-            }
-        };
-        
-        // Animate on page load
-        setTimeout(() => {
-            triggerHeroAnimation();
-        }, 500);
+        aboutObserver.observe(aboutSection);
     }
-    
-    // Personal Trainers Section Background Animation
+
+    // Leaders & Founders Section Animation Trigger
+    const leadersSection = document.querySelector('.leaders-founders-section');
+    if (leadersSection && 'IntersectionObserver' in window) {
+        const leadersObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
+                    const sectionTitle = leadersSection.querySelector('.section-title');
+                    if (sectionTitle) {
+                        sectionTitle.classList.add('animate');
+                    }
+                    leadersObserver.unobserve(leadersSection);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        leadersObserver.observe(leadersSection);
+    }
+
+    // Trainers Section Animation Trigger
     const trainersSection = document.querySelector('.trainers-section');
-    if (trainersSection) {
-        window.trainersHasAnimated = false;
-        
-        const triggerTrainersAnimation = () => {
-            if (!window.trainersHasAnimated) {
-                window.trainersHasAnimated = true;
-                trainersSection.classList.remove('animate');
-                void trainersSection.offsetHeight;
-                setTimeout(() => {
+    if (trainersSection && 'IntersectionObserver' in window) {
+        const trainersObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
                     trainersSection.classList.add('animate');
-                }, 100);
-            }
-        };
+                    trainersObserver.unobserve(trainersSection);
+                }
+            });
+        }, { threshold: 0.2 });
         
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !window.trainersHasAnimated) {
-                        triggerTrainersAnimation();
-                    }
-                });
-            }, { threshold: 0.2 });
-            
-            observer.observe(trainersSection);
-        }
-        
-        setTimeout(() => {
-            const rect = trainersSection.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-            if (isVisible && !window.trainersHasAnimated) {
-                triggerTrainersAnimation();
-            }
-        }, 1000);
+        trainersObserver.observe(trainersSection);
     }
-    
-    // Gallery Section Background Animation
+
+    // Media/Gallery Section Animation Trigger
     const mediaSection = document.querySelector('.media-section');
-    if (mediaSection) {
-        window.mediaHasAnimated = false;
-        
-        const triggerMediaAnimation = () => {
-            if (!window.mediaHasAnimated) {
-                window.mediaHasAnimated = true;
-                mediaSection.classList.remove('animate');
-                void mediaSection.offsetHeight;
-                setTimeout(() => {
+    if (mediaSection && 'IntersectionObserver' in window) {
+        const mediaObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
                     mediaSection.classList.add('animate');
-                }, 100);
-            }
-        };
+                    mediaObserver.unobserve(mediaSection);
+                }
+            });
+        }, { threshold: 0.2 });
         
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !window.mediaHasAnimated) {
-                        triggerMediaAnimation();
-                    }
-                });
-            }, { threshold: 0.2 });
-            
-            observer.observe(mediaSection);
-        }
-        
-        setTimeout(() => {
-            const rect = mediaSection.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-            if (isVisible && !window.mediaHasAnimated) {
-                triggerMediaAnimation();
-            }
-        }, 1000);
+        mediaObserver.observe(mediaSection);
     }
-    
-    // Events Section Background Animation
-    const eventsSection = document.querySelector('.events-section');
-    if (eventsSection) {
-        window.eventsHasAnimated = false;
-        
-        const triggerEventsAnimation = () => {
-            if (!window.eventsHasAnimated) {
-                window.eventsHasAnimated = true;
-                eventsSection.classList.remove('animate');
-                void eventsSection.offsetHeight;
-                setTimeout(() => {
-                    eventsSection.classList.add('animate');
-                }, 100);
-            }
-        };
-        
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !window.eventsHasAnimated) {
-                        triggerEventsAnimation();
-                    }
-                });
-            }, { threshold: 0.2 });
-            
-            observer.observe(eventsSection);
-        }
-        
-        setTimeout(() => {
-            const rect = eventsSection.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-            if (isVisible && !window.eventsHasAnimated) {
-                triggerEventsAnimation();
-            }
-        }, 1000);
-    }
-    
-    const heroSectionOld = document.querySelector('.hero-section');
+
+    // Matrix warp effect enhancement on scroll
+    const heroSection = document.querySelector('.hero-section');
     const matrixOverlay = document.querySelector('.matrix-overlay');
     
     if (heroSection && matrixOverlay) {
@@ -343,46 +211,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Hero GIF Background - GIFs auto-play and loop automatically, no JavaScript needed
-
-    // Kids MMA Section - Background image slide animation
-    const kidsMmaSection = document.querySelector('.kids-mma-section');
-    if (kidsMmaSection) {
-        window.kidsMmaHasAnimated = false;
-        
-        const triggerKidsMmaAnimation = () => {
-            if (!window.kidsMmaHasAnimated) {
-                window.kidsMmaHasAnimated = true;
-                kidsMmaSection.classList.remove('animate');
-                void kidsMmaSection.offsetHeight;
-                setTimeout(() => {
-                    kidsMmaSection.classList.add('animate');
-                }, 100);
-            }
-        };
-        
-        // Intersection Observer for scroll trigger
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !window.kidsMmaHasAnimated) {
-                        triggerKidsMmaAnimation();
-                    }
-                });
-            }, { threshold: 0.2 });
-            
-            observer.observe(kidsMmaSection);
-        }
-        
-        // Check if section is already visible on page load
-        setTimeout(() => {
-            const rect = kidsMmaSection.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-            if (isVisible && !window.kidsMmaHasAnimated) {
-                triggerKidsMmaAnimation();
-            }
-        }, 1000);
-    }
 
     // Trainers Carousel Functionality
     const trainersCarousel = document.querySelector('.trainers-carousel');
@@ -497,71 +325,434 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Kids MMA Section GIF Background - GIFs auto-play and loop automatically
-
-    // Simple MMA Section GIF Background - GIFs auto-play and loop automatically
-
-    // AI Features Dropdown Functionality
-    const aiFeatureBtns = document.querySelectorAll('.ai-feature-btn');
-    aiFeatureBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const featureId = this.getAttribute('data-feature');
-            const content = document.getElementById(featureId);
-            
-            // Close all other dropdowns
-            aiFeatureBtns.forEach(otherBtn => {
-                if (otherBtn !== this) {
-                    otherBtn.classList.remove('active');
-                    const otherId = otherBtn.getAttribute('data-feature');
-                    const otherContent = document.getElementById(otherId);
-                    if (otherContent) {
-                        otherContent.classList.remove('active');
-                    }
+    // Kids MMA Section Video Control - Power-saving resistant
+    const mmaVideo = document.querySelector('.mma-background-video') || document.getElementById('mmaKidsVideo');
+    const mmaVideoBackground = document.querySelector('.mma-video-background');
+    const mmaPlayBtn = document.getElementById('mmaVideoPlayBtn');
+    
+    if (mmaVideo) {
+        // Set video attributes
+        mmaVideo.muted = true;
+        mmaVideo.loop = true;
+        mmaVideo.playsInline = true;
+        mmaVideo.setAttribute('playsinline', '');
+        mmaVideo.setAttribute('webkit-playsinline', '');
+        mmaVideo.setAttribute('muted', '');
+        mmaVideo.setAttribute('autoplay', '');
+        
+        let videoPlaying = false;
+        let playAttempts = 0;
+        const maxAttempts = 5;
+        
+        // Function to play video aggressively
+        const playVideo = () => {
+            if (mmaVideo.readyState >= 2) { // HAVE_CURRENT_DATA or higher
+                const playPromise = mmaVideo.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        videoPlaying = true;
+                        playAttempts = 0;
+                        mmaVideo.style.opacity = '1';
+                        mmaVideo.style.display = 'block';
+                        if (mmaPlayBtn) mmaPlayBtn.style.display = 'none';
+                        if (mmaVideoBackground) {
+                            mmaVideoBackground.style.opacity = '1';
+                        }
+                    }).catch(error => {
+                        videoPlaying = false;
+                        playAttempts++;
+                        if (mmaPlayBtn) mmaPlayBtn.style.display = 'flex';
+                        console.log('Video play failed:', error.name);
+                    });
                 }
+            }
+        };
+        
+        // Show play button if video fails to play
+        if (mmaPlayBtn) {
+            mmaPlayBtn.addEventListener('click', () => {
+                playVideo();
             });
+        }
+        
+        // Aggressive play attempts
+        mmaVideo.addEventListener('loadedmetadata', playVideo);
+        mmaVideo.addEventListener('loadeddata', playVideo);
+        mmaVideo.addEventListener('canplay', playVideo);
+        mmaVideo.addEventListener('canplaythrough', playVideo);
+        
+        // Prevent pause from power saving
+        mmaVideo.addEventListener('pause', function(e) {
+            if (!this.ended && !document.hidden && videoPlaying) {
+                setTimeout(() => {
+                    if (this.paused) {
+                        this.play().then(() => {
+                            videoPlaying = true;
+                        }).catch(() => {
+                            if (mmaPlayBtn) mmaPlayBtn.style.display = 'flex';
+                        });
+                    }
+                }, 100);
+            }
+        });
+        
+        // Ensure video plays after splash animation
+        setTimeout(() => {
+            playVideo();
+            if (mmaVideoBackground) {
+                mmaVideoBackground.style.opacity = '1';
+            }
+        }, 4000);
+        
+        // Force play after animation completes
+        setTimeout(() => {
+            playVideo();
+        }, 6000);
+        
+        // Video loop handler
+        mmaVideo.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play().then(() => {
+                this.style.opacity = '1';
+                this.style.display = 'block';
+            }).catch(() => {
+                if (mmaPlayBtn) mmaPlayBtn.style.display = 'flex';
+            });
+        });
+        
+        // Show video when playing
+        mmaVideo.addEventListener('playing', function() {
+            this.style.opacity = '1';
+            this.style.display = 'block';
+            videoPlaying = true;
+            if (mmaVideoBackground) {
+                mmaVideoBackground.style.opacity = '1';
+            }
+        });
+        
+        // Ensure video is visible after splash animation
+        setTimeout(() => {
+            mmaVideo.style.opacity = '1';
+            mmaVideo.style.display = 'block';
+            if (mmaVideoBackground) {
+                mmaVideoBackground.style.opacity = '1';
+            }
+        }, 6000);
+        
+        // Handle page visibility
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden && mmaVideo.paused && videoPlaying) {
+                setTimeout(() => playVideo(), 500);
+            }
+        });
+        
+        // Intersection Observer - play when section is visible
+        const kidsMmaSection = document.querySelector('.kids-mma-section');
+        if (kidsMmaSection && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+                        playVideo();
+                        if (mmaVideoBackground) {
+                            mmaVideoBackground.style.opacity = '1';
+                        }
+                    }
+                });
+            }, { threshold: [0.3, 0.5, 0.7] });
             
-            // Toggle current dropdown
-            this.classList.toggle('active');
-            if (content) {
-                content.classList.toggle('active');
+            observer.observe(kidsMmaSection);
+        }
+        
+        // Aggressive periodic check (every 1 second)
+        const playCheckInterval = setInterval(() => {
+            if (mmaVideo.paused && !mmaVideo.ended && !document.hidden && playAttempts < maxAttempts) {
+                playVideo();
+            } else if (playAttempts >= maxAttempts && mmaPlayBtn) {
+                mmaPlayBtn.style.display = 'flex';
+            }
+        }, 1000);
+        
+        // Clean up interval when video is playing
+        mmaVideo.addEventListener('playing', () => {
+            videoPlaying = true;
+            playAttempts = 0;
+        });
+        
+        // User interaction triggers
+        const userInteractionPlay = () => {
+            if (mmaVideo.paused) {
+                playVideo();
+            }
+        };
+        
+        document.addEventListener('click', userInteractionPlay, { once: true });
+        document.addEventListener('touchstart', userInteractionPlay, { once: true });
+        document.addEventListener('scroll', userInteractionPlay, { once: true });
+        window.addEventListener('focus', userInteractionPlay, { once: true });
+    }
+
+    // Simple MMA Section Video Control
+    const simpleMmaVideo = document.getElementById('simpleMmaVideo');
+    if (simpleMmaVideo) {
+        simpleMmaVideo.muted = true;
+        simpleMmaVideo.loop = true;
+        simpleMmaVideo.playsInline = true;
+        
+        const playSimpleVideo = () => {
+            const playPromise = simpleMmaVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log('Simple MMA video playing successfully');
+                }).catch(error => {
+                    console.log('Simple video autoplay prevented:', error.name);
+                    document.addEventListener('click', () => simpleMmaVideo.play(), { once: true });
+                    document.addEventListener('touchstart', () => simpleMmaVideo.play(), { once: true });
+                });
+            }
+        };
+        
+        simpleMmaVideo.addEventListener('canplay', playSimpleVideo, { once: true });
+        simpleMmaVideo.addEventListener('loadeddata', playSimpleVideo, { once: true });
+        
+        // Ensure video loops
+        simpleMmaVideo.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+        
+        // Play on section visibility
+        const simpleMmaSection = document.querySelector('.simple-mma-section');
+        if (simpleMmaSection && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        playSimpleVideo();
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            observer.observe(simpleMmaSection);
+        }
+    }
+
+
+    // Enhanced Trainers Section - Three-Tier Tabbed Interface
+    const trainerTabs = document.querySelectorAll('.trainer-tab');
+    const tierContents = document.querySelectorAll('.trainers-tier-content');
+    
+    trainerTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetTier = this.getAttribute('data-tier');
+            
+            // Remove active class from all tabs and contents
+            trainerTabs.forEach(t => t.classList.remove('active'));
+            tierContents.forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding content
+            this.classList.add('active');
+            const targetContent = document.querySelector(`[data-content="${targetTier}"]`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+    
+    // Leadership Page Tabs
+    const leadershipTabs = document.querySelectorAll('.leadership-tab');
+    const leadershipTierContents = document.querySelectorAll('.leadership-tier-content');
+    
+    leadershipTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetTier = this.getAttribute('data-tier');
+            
+            leadershipTabs.forEach(t => t.classList.remove('active'));
+            leadershipTierContents.forEach(c => c.classList.remove('active'));
+            
+            this.classList.add('active');
+            const targetContent = document.querySelector(`.leadership-tier-content[data-content="${targetTier}"]`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+    
+    // Leadership Accordion
+    const leadershipAccordionHeaders = document.querySelectorAll('.leadership-accordion .accordion-header');
+    
+    leadershipAccordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const accordionItem = this.parentElement;
+            const isActive = accordionItem.classList.contains('active');
+            
+            const leadershipCard = accordionItem.closest('.leadership-card-enhanced');
+            if (leadershipCard) {
+                const allItems = leadershipCard.querySelectorAll('.accordion-item');
+                allItems.forEach(item => item.classList.remove('active'));
+            }
+            
+            if (!isActive) {
+                accordionItem.classList.add('active');
+            }
+        });
+    });
+    
+    // Nested Accordion Functionality
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const accordionItem = this.parentElement;
+            const isActive = accordionItem.classList.contains('active');
+            
+            // Close all accordions in the same trainer card
+            const trainerCard = accordionItem.closest('.trainer-card-enhanced');
+            if (trainerCard) {
+                const allItems = trainerCard.querySelectorAll('.accordion-item');
+                allItems.forEach(item => item.classList.remove('active'));
+            }
+            
+            // Toggle current accordion
+            if (!isActive) {
+                accordionItem.classList.add('active');
             }
         });
     });
 
+    // Kids MMA Page - Button Navigation
+    const mmaNavButtonsPage = document.querySelectorAll('.mma-nav-btn-page');
+    const mmaContentSections = document.querySelectorAll('.kids-mma-content-section');
+    
+    mmaNavButtonsPage.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetSection = this.getAttribute('data-section');
+            
+            // Remove active class from all buttons and sections
+            mmaNavButtonsPage.forEach(btn => btn.classList.remove('active'));
+            mmaContentSections.forEach(section => section.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding section
+            this.classList.add('active');
+            const targetContent = document.getElementById(`${targetSection}-section`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+                // Smooth scroll to section
+                targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Kids MMA Gallery Carousel
+    const carouselTrack = document.querySelector('.kids-mma-carousel-track');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.carousel-btn-prev');
+    const nextBtn = document.querySelector('.carousel-btn-next');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    if (carouselTrack && carouselSlides.length > 0) {
+        let currentSlide = 0;
+        const totalSlides = carouselSlides.length;
+        
+        // Function to update carousel position
+        function updateCarousel() {
+            const translateX = -currentSlide * 100;
+            carouselTrack.style.transform = `translateX(${translateX}%)`;
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        
+        // Next slide function
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Previous slide function
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Button event listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', nextSlide);
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', prevSlide);
+        }
+        
+        // Indicator event listeners
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const gallerySection = document.getElementById('gallery-section');
+            if (gallerySection && gallerySection.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            }
+        });
+        
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        if (carouselTrack) {
+            carouselTrack.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            carouselTrack.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+        }
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide(); // Swipe left - next
+                } else {
+                    prevSlide(); // Swipe right - previous
+                }
+            }
+        }
+        
+        // Auto-play (optional - can be disabled)
+        // let autoPlayInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-play on hover
+        // if (carouselTrack) {
+        //     carouselTrack.addEventListener('mouseenter', () => {
+        //         clearInterval(autoPlayInterval);
+        //     });
+        //     carouselTrack.addEventListener('mouseleave', () => {
+        //         autoPlayInterval = setInterval(nextSlide, 5000);
+        //     });
+        // }
+    }
+
     // Performance: Preload critical images
     const splashImage = new Image();
     splashImage.src = 'assets/splashenhanced.jpeg';
-    
-    // Events Carousel Navigation
-    const eventsFeed = document.querySelector('.events-feed');
-    const carouselPrev = document.querySelector('.carousel-prev');
-    const carouselNext = document.querySelector('.carousel-next');
-    
-    if (eventsFeed && carouselPrev && carouselNext) {
-        const scrollAmount = 240;
-        
-        carouselPrev.addEventListener('click', () => {
-            eventsFeed.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        });
-        
-        carouselNext.addEventListener('click', () => {
-            eventsFeed.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        });
-        
-        // Hide/show buttons based on scroll position
-        const updateCarouselButtons = () => {
-            const isAtStart = eventsFeed.scrollLeft <= 0;
-            const isAtEnd = eventsFeed.scrollLeft >= eventsFeed.scrollWidth - eventsFeed.clientWidth - 10;
-            
-            carouselPrev.style.opacity = isAtStart ? '0.3' : '1';
-            carouselPrev.style.pointerEvents = isAtStart ? 'none' : 'auto';
-            carouselNext.style.opacity = isAtEnd ? '0.3' : '1';
-            carouselNext.style.pointerEvents = isAtEnd ? 'none' : 'auto';
-        };
-        
-        eventsFeed.addEventListener('scroll', updateCarouselButtons);
-        updateCarouselButtons();
-    }
     
     // Events Filter Functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -609,24 +800,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Expanding Card Gallery Interaction
-    const expandingCards = document.querySelectorAll('.expanding-card');
-    if (expandingCards.length > 0) {
-        expandingCards.forEach((card, index) => {
-            card.addEventListener('mouseenter', function() {
-                // Remove hover class from all cards
-                expandingCards.forEach(c => c.classList.remove('active'));
-                // Add active class to hovered card
-                this.classList.add('active');
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.classList.remove('active');
-            });
-        });
-    }
-    
-    // Website loaded successfully
+    // Console log for debugging
+    console.log('Forever Fit website loaded successfully!');
+    console.log('Green theme active with matrix warp effects');
 });
 
 // Handle window resize

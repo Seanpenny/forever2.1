@@ -1,0 +1,305 @@
+/* Mobile App Section CSS - ARCHIVED FOR FUTURE IMPLEMENTATION */
+/* Archived Date: December 4, 2025 */
+/* This CSS is preserved for future use when the Mobile App section is re-implemented */
+
+.mobile-app-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--dark-surface) 0%, var(--dark-bg) 100%);
+    position: relative;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-app-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--lime-green), transparent);
+    box-shadow: 0 0 20px var(--lime-green);
+}
+
+.mobile-app-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.mobile-app-image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-app-image {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 30px;
+    filter: 
+        drop-shadow(0 0 30px rgba(57, 255, 20, 0.4))
+        brightness(0.95)
+        contrast(1.1);
+    transition: all 0.4s ease;
+    mix-blend-mode: normal;
+    background: linear-gradient(135deg, var(--dark-surface) 0%, var(--dark-bg) 100%);
+    padding: 20px;
+    box-shadow: 
+        0 0 40px rgba(57, 255, 20, 0.3),
+        inset 0 0 40px rgba(57, 255, 20, 0.1);
+}
+
+.mobile-app-image-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(0, 255, 65, 0.05) 100%);
+    border-radius: 40px;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+.mobile-app-image:hover {
+    transform: scale(1.05);
+    filter: 
+        drop-shadow(0 0 50px rgba(57, 255, 20, 0.6))
+        brightness(1.05)
+        contrast(1.15);
+    box-shadow: 
+        0 0 60px rgba(57, 255, 20, 0.5),
+        inset 0 0 50px rgba(57, 255, 20, 0.15);
+}
+
+.mobile-app-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mobile-app-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--text-light);
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.mobile-app-title .accent {
+    color: var(--lime-green);
+}
+
+.mobile-app-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.mobile-app-description {
+    font-size: 1.5rem;
+    color: var(--lime-green);
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 0 0 10px var(--lime-green);
+}
+
+.mobile-app-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobile-app-info p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--lime-green);
+    color: var(--text-dark);
+    padding: 1.2rem 2.5rem;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 20px var(--lime-green),
+        0 4px 15px rgba(57, 255, 20, 0.4);
+    border: 2px solid var(--lime-green);
+}
+
+.download-btn:hover {
+    background: var(--lime-green-light);
+    transform: translateY(-5px);
+    box-shadow: 
+        0 0 40px var(--lime-green),
+        0 8px 25px rgba(57, 255, 20, 0.6);
+}
+
+.download-icon {
+    font-size: 1.5rem;
+}
+
+.download-text {
+    font-weight: 900;
+}
+
+/* AI Features Dropdown */
+.ai-features-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.ai-feature-btn {
+    background: rgba(26, 26, 26, 0.8);
+    border: 2px solid rgba(57, 255, 20, 0.3);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    text-align: left;
+    width: 100%;
+}
+
+.ai-feature-btn:hover {
+    border-color: var(--lime-green);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+    background: rgba(26, 26, 26, 0.95);
+}
+
+.ai-feature-btn.active {
+    border-color: var(--lime-green);
+    background: rgba(57, 255, 20, 0.1);
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.5);
+}
+
+.ai-feature-btn.active .ai-arrow {
+    transform: rotate(180deg);
+}
+
+.ai-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.ai-title {
+    flex: 1;
+    color: var(--lime-green);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-shadow: 0 0 10px var(--lime-green);
+}
+
+.ai-arrow {
+    color: var(--lime-green);
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.ai-feature-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    background: rgba(10, 10, 10, 0.9);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 0 1.5rem;
+    margin-top: -1rem;
+    margin-bottom: 0.5rem;
+}
+
+.ai-feature-content.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 1.5rem;
+    border-color: var(--lime-green);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.ai-feature-content p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Responsive Design for Mobile App Section */
+@media (max-width: 768px) {
+    .mobile-app-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .mobile-app-section {
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+    
+    .mobile-app-content {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .mobile-app-image {
+        max-width: 300px;
+    }
+    
+    .mobile-app-title {
+        font-size: 2.5rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .mobile-app-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .download-buttons {
+        flex-direction: column;
+    }
+    
+    .download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+
+
+

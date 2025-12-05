@@ -5,27 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Forever Fit Website in Edge",
+            "name": "Open Forever Fit Website (Direct - No Server)",
             "type": "chrome",
             "request": "launch",
-            "file": "${workspaceFolder}/index.html",
-            "webRoot": "${workspaceFolder}",
-            "runtimeExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-            "runtimeArgs": [
-                "--disable-web-security",
-                "--disable-features=IsolateOrigins,site-per-process"
-            ],
-            "sourceMaps": false,
-            "skipFiles": ["<node_internals>/**"]
+            "url": "${workspaceFolder}/index.html",
+            "webRoot": "${workspaceFolder}"
         },
         {
-            "name": "Launch Forever Fit Website (Default Browser)",
+            "name": "Open Forever Fit Website in Edge (Direct - No Server)",
             "type": "chrome",
             "request": "launch",
-            "file": "${workspaceFolder}/index.html",
+            "url": "${workspaceFolder}/index.html",
             "webRoot": "${workspaceFolder}",
-            "sourceMaps": false,
-            "skipFiles": ["<node_internals>/**"]
+            "runtimeExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
         }
     ]
 }

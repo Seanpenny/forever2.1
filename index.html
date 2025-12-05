@@ -19,11 +19,11 @@
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#leaders">Leaders & Founders</a></li>
                 <li><a href="#trainers">Trainers</a></li>
-                <li><a href="#kids-mma">Kids MMA</a></li>
+                <li><a href="#programs">Programs</a></li>
                 <li><a href="#media">Media</a></li>
                 <li><a href="#events">Events</a></li>
-                <li><a href="#mobile-app">Mobile App</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -34,17 +34,24 @@
         </div>
     </nav>
 
-    <!-- Section 1: Hero Section with Video Background -->
+    <!-- Section 1: Hero Section -->
     <section id="home" class="hero-section">
-        <div class="hero-background-image"></div>
+        <!-- Gym Rules Button (Top Right Corner) -->
+        <a href="gym-rules.html" class="gym-rules-btn-corner">
+            <img src="images/splash enhanced.jpeg" alt="Forever Fit Logo" class="gym-rules-icon">
+            <span>GYM RULES</span>
+        </a>
+        
         <div class="hero-background">
-            <img src="assets/new image for home.jpg" alt="Hero Background" class="hero-video" id="heroVideo">
             <div class="matrix-overlay"></div>
         </div>
         <div class="hero-content">
             <h1 class="hero-title">Welcome to Forever Fit</h1>
             <p class="hero-subtitle">Transform Your Body, Transform Your Life</p>
-            <button class="cta-button">Get Started</button>
+            <div class="hero-buttons">
+                <button class="cta-button">Join Now</button>
+                <a href="#media" class="cta-button cta-button-secondary">Gallery</a>
+            </div>
         </div>
         <div class="scroll-indicator">
             <span>Scroll Down</span>
@@ -57,18 +64,16 @@
         <div class="about-background-image"></div>
         <div class="container">
             <h2 class="section-title">
-                <span class="title-word" data-word="0">About</span>
-                <span class="title-word" data-word="1">Forever</span>
-                <span class="title-word accent" data-word="2">Fit</span>
+                <span class="title-word">About</span>
+                <span class="title-word accent">Forever</span>
+                <span class="title-word accent">Fit</span>
             </h2>
-            
             <div class="about-content">
                 <div class="about-text">
-                    <p class="sentence sentence-1 slide-in-left">Forever Fit is your premier destination for achieving your fitness goals.</p>
-                    <p class="sentence sentence-2 slide-in-right">We offer state-of-the-art equipment, expert trainers, and a supportive community that will help you reach new heights.</p>
-                    <p class="sentence sentence-3 slide-in-left">Whether you're a beginner or a seasoned athlete, we have everything you need to succeed on your fitness journey.</p>
-                    <p class="sentence sentence-4 slide-in-right">Our mission is to empower individuals of all fitness levels to transform their bodies and lives through comprehensive training programs, cutting-edge facilities, and unwavering support from our dedicated team.</p>
-                    <p class="sentence sentence-5 slide-in-left">At Forever Fit, we believe that fitness is not just about physical strength—it's about building confidence, discipline, and a healthier lifestyle that extends far beyond the gym walls.</p>
+                    <p class="sentence sentence-1 slide-in-left">Forever Fit is your premier destination for achieving your fitness goals. We offer state-of-the-art equipment, expert trainers, and a supportive community that will help you reach new heights.</p>
+                    <p class="sentence sentence-2 slide-in-right">Whether you're a beginner or a seasoned athlete, we have everything you need to succeed on your fitness journey.</p>
+                    <p class="sentence sentence-3 slide-in-left">Our mission is to empower individuals of all fitness levels to transform their bodies and lives through comprehensive training programs, cutting-edge facilities, and unwavering support from our dedicated team.</p>
+                    <p class="sentence sentence-4 slide-in-right">At Forever Fit, we believe that fitness is not just about physical strength—it's about building confidence, discipline, and a healthier lifestyle that extends far beyond the gym walls.</p>
                 </div>
                 <div class="about-features">
                     <div class="feature-card">
@@ -100,230 +105,643 @@
         </div>
     </section>
 
+    <!-- Section 2.5: Our Leaders and Founders -->
+    <section id="leaders" class="leaders-founders-section">
+        <div class="leaders-background-image"></div>
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-word">Our</span>
+                <span class="title-word accent">Leaders</span>
+                <span class="title-word">and</span>
+                <span class="title-word accent">Founders</span>
+            </h2>
+            
+            <div class="leaders-grid">
+                <!-- Quinton -->
+                <div class="leader-card">
+                    <div class="leader-image-container">
+                        <img src="images/qoach_q.jpg" alt="Quinton - Founder" class="leader-image">
+                        <div class="leader-badge founder-badge">Founder & Director</div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Quinton</h3>
+                        <p class="leader-title">Founder, Head Coach & Director</p>
+                        <p class="leader-bio">Founder and Director of Forever Fit Gym. Dual expertise as gym owner and sports conditioning specialist, leading athlete performance development.</p>
+                        <div class="leader-certifications">
+                            <span class="cert-badge">Strength & Conditioning</span>
+                            <span class="cert-badge">Sports Performance</span>
+                            <span class="cert-badge">EP Rugby Coach</span>
+                        </div>
+                        <a href="leadership.html" class="leader-link-btn">View Full Profile →</a>
+                    </div>
+                </div>
+                
+                <!-- Songezo Mongishi -->
+                <div class="leader-card">
+                    <div class="leader-image-container">
+                        <img src="images/qoach_q.jpg" alt="Songezo Mongishi - Co-Owner" class="leader-image">
+                        <div class="leader-badge co-owner-badge">Co-Owner</div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Songezo Mongishi</h3>
+                        <p class="leader-title">Co-Owner & Assistant Coach</p>
+                        <p class="leader-bio">Co-owner and partner of Forever Fit Gym, sharing the vision of creating a premier fitness destination.</p>
+                        <div class="leader-certifications">
+                            <span class="cert-badge">Personal Trainer</span>
+                            <span class="cert-badge">Assistant Coach</span>
+                        </div>
+                        <a href="leadership.html" class="leader-link-btn">View Full Profile →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="partnership-statement">
+                <p class="partnership-text">Together, Quinton and Songezo lead Forever Fit with a shared commitment to excellence, innovation, and empowering every member to achieve their fitness goals.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Section 3: Meet the Team / Personal Trainers -->
     <section id="trainers" class="trainers-section">
         <div class="trainers-background-image"></div>
         <div class="container">
             <h1 class="trainers-main-title">Our <span class="accent">Personal Trainers</span></h1>
             <h2 class="trainers-subtitle">Meet the Team</h2>
-            <div class="trainers-carousel-wrapper">
-                <button class="carousel-arrow carousel-arrow-left" aria-label="Previous trainers">
-                    <span>‹</span>
-                </button>
-                <div class="trainers-carousel">
-                    <div class="trainers-track">
-                        <div class="trainer-card">
-                            <div class="trainer-background"></div>
-                            <div class="trainer-image-container">
-                                <img src="images/owen_Pt.jpg" alt="Owen - Personal Trainer" class="trainer-image">
+            
+            <!-- Three-Tier Tabbed Interface -->
+            <div class="trainers-tabs-container">
+                <div class="trainers-tabs">
+                    <button class="trainer-tab active" data-tier="head-coach">
+                        <span class="tab-icon">👑</span>
+                        <span class="tab-text">Head Coach</span>
+                    </button>
+                    <button class="trainer-tab" data-tier="assistant-coaches">
+                        <span class="tab-icon">💪</span>
+                        <span class="tab-text">Assistant Coaches</span>
+                    </button>
+                    <button class="trainer-tab" data-tier="external-instructors">
+                        <span class="tab-icon">🥋</span>
+                        <span class="tab-text">External Instructors</span>
+                    </button>
+                </div>
+                
+                <!-- Head Coach Tier -->
+                <div class="trainers-tier-content active" data-content="head-coach">
+                    <div class="trainers-grid-enhanced">
+                        <div class="trainer-card-enhanced" data-role="head-coach">
+                            <div class="trainer-card-header">
+                                <div class="trainer-image-wrapper">
+                                    <img src="images/qoach_q.jpg" alt="Head Coach" class="trainer-image-enhanced">
+                                    <div class="role-badge head-coach-badge">Head Coach & Director</div>
+                                </div>
+                                <div class="trainer-header-info">
+                                    <h3 class="trainer-name-enhanced">Sean</h3>
+                                    <p class="trainer-role">Founder & Head Coach</p>
+                                    <div class="trainer-specialty-tags">
+                                        <span class="specialty-tag">Sports Conditioning</span>
+                                        <span class="specialty-tag">Strength Training</span>
+                                        <span class="specialty-tag">Performance</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="trainer-triangle-overlay">
-                                <div class="trainer-info">
-                                    <h3 class="trainer-name">Owen</h3>
-                                    <ul class="trainer-specialties">
-                                        <li>Advanced Personal Training</li>
-                                        <li>Bodybuilding Coach</li>
-                                        <li>Nutrition Specialist</li>
-                                    </ul>
+                            
+                            <!-- Nested Accordion Features -->
+                            <div class="trainer-accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">📋</span>
+                                        <span>About & Bio</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Head Coach and Director with extensive experience in sports conditioning and athlete performance. Leading Forever Fit with passion and expertise.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">🎓</span>
+                                        <span>Qualifications</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul class="qualifications-list">
+                                            <li>Certified Strength & Conditioning Specialist</li>
+                                            <li>Sports Performance Coach</li>
+                                            <li>EP Rugby Performance Coach</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">🎥</span>
+                                        <span>Video Profile</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <a href="#" class="video-link-btn" target="_blank">Watch Profile Video →</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">⭐</span>
+                                        <span>Specializations</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul class="specializations-list">
+                                            <li>Sports Conditioning</li>
+                                            <li>Agility Training</li>
+                                            <li>Speed & Explosiveness</li>
+                                            <li>Rugby Performance</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="trainer-card">
-                            <div class="trainer-background"></div>
-                            <div class="trainer-image-container">
-                                <img src="images/PT2.jpg" alt="Personal Trainer" class="trainer-image">
-                            </div>
-                            <div class="trainer-triangle-overlay">
-                                <div class="trainer-info">
-                                    <h3 class="trainer-name">Trainer Name</h3>
-                                    <ul class="trainer-specialties">
-                                        <li>Advanced Personal Training</li>
-                                        <li>Bodybuilding Coach</li>
-                                        <li>Nutrition Specialist</li>
-                                    </ul>
+                        
+                        <!-- Songezo Mongishi - Head Coach -->
+                        <div class="trainer-card-enhanced" data-role="head-coach">
+                            <div class="trainer-card-header">
+                                <div class="trainer-image-wrapper">
+                                    <img src="images/qoach_q.jpg" alt="Songezo Mongishi" class="trainer-image-enhanced">
+                                    <div class="role-badge head-coach-badge">Head Coach</div>
+                                </div>
+                                <div class="trainer-header-info">
+                                    <h3 class="trainer-name-enhanced">Songezo Mongishi</h3>
+                                    <p class="trainer-role">Head Coach</p>
+                                    <div class="trainer-specialty-tags">
+                                        <span class="specialty-tag">Fitness Training</span>
+                                        <span class="specialty-tag">Coaching</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="trainer-card">
-                            <div class="trainer-background"></div>
-                            <div class="trainer-image-container">
-                                <img src="images/Q_PT.jpg" alt="Q - Personal Trainer" class="trainer-image">
-                            </div>
-                            <div class="trainer-triangle-overlay">
-                                <div class="trainer-info">
-                                    <h3 class="trainer-name">Q</h3>
-                                    <ul class="trainer-specialties">
-                                        <li>Advanced Personal Training</li>
-                                        <li>Bodybuilding Coach</li>
-                                        <li>Nutrition Specialist</li>
-                                    </ul>
+                            
+                            <!-- Nested Accordion Features -->
+                            <div class="trainer-accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">📋</span>
+                                        <span>About & Bio</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Head Coach with expertise in fitness training and athlete development.</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="trainer-card">
-                            <div class="trainer-background"></div>
-                            <div class="trainer-image-container">
-                                <img src="images/owen_Pt.jpg" alt="Owen - Personal Trainer" class="trainer-image">
-                            </div>
-                            <div class="trainer-triangle-overlay">
-                                <div class="trainer-info">
-                                    <h3 class="trainer-name">Owen</h3>
-                                    <ul class="trainer-specialties">
-                                        <li>Advanced Personal Training</li>
-                                        <li>Bodybuilding Coach</li>
-                                        <li>Nutrition Specialist</li>
-                                    </ul>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">🎓</span>
+                                        <span>Qualifications</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul class="qualifications-list">
+                                            <li>Certified Head Coach</li>
+                                            <li>Fitness Training Specialist</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="trainer-card">
-                            <div class="trainer-background"></div>
-                            <div class="trainer-image-container">
-                                <img src="images/PT2.jpg" alt="Personal Trainer" class="trainer-image">
-                            </div>
-                            <div class="trainer-triangle-overlay">
-                                <div class="trainer-info">
-                                    <h3 class="trainer-name">Trainer Name</h3>
-                                    <ul class="trainer-specialties">
-                                        <li>Advanced Personal Training</li>
-                                        <li>Bodybuilding Coach</li>
-                                        <li>Nutrition Specialist</li>
-                                    </ul>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">🎥</span>
+                                        <span>Video Profile</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <a href="#" class="video-link-btn" target="_blank">Watch Profile Video →</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="trainer-card">
-                            <div class="trainer-background"></div>
-                            <div class="trainer-image-container">
-                                <img src="images/Q_PT.jpg" alt="Q - Personal Trainer" class="trainer-image">
-                            </div>
-                            <div class="trainer-triangle-overlay">
-                                <div class="trainer-info">
-                                    <h3 class="trainer-name">Q</h3>
-                                    <ul class="trainer-specialties">
-                                        <li>Advanced Personal Training</li>
-                                        <li>Bodybuilding Coach</li>
-                                        <li>Nutrition Specialist</li>
-                                    </ul>
+                                
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">⭐</span>
+                                        <span>Specializations</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul class="specializations-list">
+                                            <li>Fitness Training</li>
+                                            <li>Coaching</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-arrow carousel-arrow-right" aria-label="Next trainers">
-                    <span>›</span>
-                </button>
+                
+                <!-- Assistant Coaches Tier -->
+                <div class="trainers-tier-content" data-content="assistant-coaches">
+                    <div class="trainers-grid-enhanced">
+                        <!-- Devon -->
+                        <div class="trainer-card-enhanced" data-role="assistant-coach">
+                            <div class="trainer-card-header">
+                                <div class="trainer-image-wrapper">
+                                    <img src="images/PT2.jpg" alt="Devon" class="trainer-image-enhanced">
+                                    <div class="role-badge assistant-badge">Assistant Coach</div>
+                                </div>
+                                <div class="trainer-header-info">
+                                    <h3 class="trainer-name-enhanced">Devon</h3>
+                                    <p class="trainer-role">Assistant Coach</p>
+                                </div>
+                            </div>
+                            <div class="trainer-accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">📋</span>
+                                        <span>About</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Dedicated assistant coach specializing in functional training and athlete development.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">🎓</span>
+                                        <span>Qualifications</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul class="qualifications-list">
+                                            <li>Certified Personal Trainer</li>
+                                            <li>Functional Training Specialist</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Brent -->
+                        <div class="trainer-card-enhanced" data-role="assistant-coach">
+                            <div class="trainer-card-header">
+                                <div class="trainer-image-wrapper">
+                                    <img src="images/owen_Pt.jpg" alt="Brent" class="trainer-image-enhanced">
+                                    <div class="role-badge co-owner-badge">Co-Owner & Assistant Coach</div>
+                                </div>
+                                <div class="trainer-header-info">
+                                    <h3 class="trainer-name-enhanced">Brent</h3>
+                                    <p class="trainer-role">Co-Owner & Assistant Coach</p>
+                                </div>
+                            </div>
+                            <div class="trainer-accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">📋</span>
+                                        <span>About</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Co-owner and assistant coach with expertise in strength training and bodybuilding.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">🎓</span>
+                                        <span>Qualifications</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul class="qualifications-list">
+                                            <li>Certified Personal Trainer</li>
+                                            <li>Bodybuilding Specialist</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- John -->
+                        <div class="trainer-card-enhanced" data-role="assistant-coach">
+                            <div class="trainer-card-header">
+                                <div class="trainer-image-wrapper">
+                                    <img src="images/Q_PT.jpg" alt="John" class="trainer-image-enhanced">
+                                    <div class="role-badge co-owner-badge">Co-Owner & Assistant Coach</div>
+                                </div>
+                                <div class="trainer-header-info">
+                                    <h3 class="trainer-name-enhanced">John</h3>
+                                    <p class="trainer-role">Co-Owner & Assistant Coach</p>
+                                </div>
+                            </div>
+                            <div class="trainer-accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">📋</span>
+                                        <span>About</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Co-owner and assistant coach focused on comprehensive fitness training.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">🎓</span>
+                                        <span>Qualifications</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul class="qualifications-list">
+                                            <li>Certified Personal Trainer</li>
+                                            <li>Fitness Specialist</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Songezo Mongishi - Assistant Coach -->
+                        <div class="trainer-card-enhanced" data-role="assistant-coach">
+                            <div class="trainer-card-header">
+                                <div class="trainer-image-wrapper">
+                                    <img src="images/qoach_q.jpg" alt="Songezo Mongishi" class="trainer-image-enhanced">
+                                    <div class="role-badge assistant-badge">Assistant Coach</div>
+                                </div>
+                                <div class="trainer-header-info">
+                                    <h3 class="trainer-name-enhanced">Songezo Mongishi</h3>
+                                    <p class="trainer-role">Assistant Coach</p>
+                                </div>
+                            </div>
+                            <div class="trainer-accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">📋</span>
+                                        <span>About</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Assistant coach dedicated to helping members achieve their fitness goals.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <span class="accordion-icon">🎓</span>
+                                        <span>Qualifications</span>
+                                        <span class="accordion-arrow">▼</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <ul class="qualifications-list">
+                                            <li>Certified Personal Trainer</li>
+                                            <li>Assistant Coach Certification</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- External Instructors Tier -->
+                <div class="trainers-tier-content" data-content="external-instructors">
+                    <div class="trainer-card-enhanced" data-role="external-instructor">
+                        <div class="trainer-card-header">
+                            <div class="trainer-image-wrapper">
+                                <img src="images/owen_Pt.jpg" alt="John Williams" class="trainer-image-enhanced">
+                                <div class="role-badge external-badge">External Instructor</div>
+                            </div>
+                            <div class="trainer-header-info">
+                                <h3 class="trainer-name-enhanced">John Williams</h3>
+                                <p class="trainer-role">MMA Coach</p>
+                                <div class="trainer-specialty-tags">
+                                    <span class="specialty-tag mma-tag">MMA</span>
+                                    <span class="specialty-tag">Combat Sports</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trainer-accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span class="accordion-icon">📋</span>
+                                    <span>About</span>
+                                    <span class="accordion-arrow">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>External MMA instructor specializing in mixed martial arts training and combat sports.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span class="accordion-icon">🎓</span>
+                                    <span>Qualifications</span>
+                                    <span class="accordion-arrow">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <ul class="qualifications-list">
+                                        <li>Certified MMA Instructor</li>
+                                        <li>Combat Sports Specialist</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span class="accordion-icon">📅</span>
+                                    <span>Availability</span>
+                                    <span class="accordion-arrow">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Available for private sessions and group classes. Contact for scheduling.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Divider: Personal Trainers to Kids MMA -->
+    <!-- Section Divider: Personal Trainers to Programs -->
     <div class="section-divider"></div>
 
-    <!-- Section 4: Kids Forever Fit MMA -->
-    <section id="kids-mma" class="kids-mma-section">
-        <!-- Background Image -->
-        <div class="mma-background-image"></div>
-        
-        <!-- Logo in Top Right Corner -->
-        <div class="mma-logo-corner">
-            <img src="images/Screenshot 2025-12-01 124404.png" alt="Kids MMA Logo" class="mma-logo-image">
-        </div>
-        
-        <!-- Content Layer (buttons and text) -->
-        <div class="mma-content-layer">
-            <h1 class="mma-main-title">Kids Forever Fit MMA</h1>
+    <!-- Section 4: What We Offer / Programs -->
+    <section id="programs" class="programs-section">
+        <div class="programs-background-image"></div>
+        <div class="container">
+            <h1 class="programs-main-title">What We <span class="accent">Offer</span></h1>
+            <h2 class="programs-subtitle">Comprehensive Fitness Programs & Services</h2>
             
-            <!-- Navigation Buttons -->
-            <div class="mma-nav-buttons">
-                <button class="mma-nav-btn" data-content="about">
-                    <span class="btn-label">About</span>
-                    <div class="btn-content">
-                        <h3>About Kids MMA</h3>
-                        <p>Discover our comprehensive martial arts program designed specifically for kids.</p>
+            <!-- Programs Grid -->
+            <div class="programs-grid">
+                <!-- Hybrid Fitness Training -->
+                <div class="program-card">
+                    <div class="program-card-image">
+                        <img src="images/forverfit img1.jpg" alt="Hybrid Fitness Training">
+                        <div class="program-overlay"></div>
                     </div>
-                </button>
-                <button class="mma-nav-btn" data-content="how-it-works">
-                    <span class="btn-label">How It Works</span>
-                    <div class="btn-content">
-                        <h3>How It Works</h3>
-                        <p>Learn about our structured classes and training methodology.</p>
+                    <div class="program-card-content">
+                        <div class="program-icon">💪</div>
+                        <h3 class="program-title">Hybrid Fitness Training</h3>
+                        <p class="program-description">Six daily time slots with expert instructors. Comprehensive training combining strength, cardio, and functional movements.</p>
+                        <div class="program-features">
+                            <span class="feature-badge">6 Daily Classes</span>
+                            <span class="feature-badge">Expert Instructors</span>
+                            <span class="feature-badge">All Levels</span>
+                        </div>
+                        <a href="hybrid-fitness.html" class="program-btn">View Schedule →</a>
                     </div>
-                </button>
-                <button class="mma-nav-btn" data-content="age-groups">
-                    <span class="btn-label">Age Groups</span>
-                    <div class="btn-content">
-                        <h3>Age Groups</h3>
-                        <p>Find the right class for your child's age and skill level.</p>
+                </div>
+
+                <!-- Running Club -->
+                <div class="program-card">
+                    <div class="program-card-image">
+                        <img src="images/FF img2.jpg" alt="Running Club">
+                        <div class="program-overlay"></div>
                     </div>
-                </button>
-                <button class="mma-nav-btn" data-content="benefits">
-                    <span class="btn-label">Benefits</span>
-                    <div class="btn-content">
-                        <h3>Benefits</h3>
-                        <p>See how martial arts helps kids develop physically and mentally.</p>
+                    <div class="program-card-content">
+                        <div class="program-icon">🏃</div>
+                        <h3 class="program-title">Running Club</h3>
+                        <p class="program-description">Wednesday group runs with route maps, distance options, and community support. Perfect for all running levels.</p>
+                        <div class="program-features">
+                            <span class="feature-badge">Wednesdays</span>
+                            <span class="feature-badge">Route Maps</span>
+                            <span class="feature-badge">Community</span>
+                        </div>
+                        <a href="running-club.html" class="program-btn">Learn More →</a>
                     </div>
-                </button>
-                <button class="mma-nav-btn" data-content="schedule">
-                    <span class="btn-label">Schedule</span>
-                    <div class="btn-content">
-                        <h3>Schedule</h3>
-                        <p>View class times and days available for registration.</p>
+                </div>
+
+                <!-- Kids MMA -->
+                <div class="program-card">
+                    <div class="program-card-image">
+                        <img src="images/Screenshot 2025-12-01 124404.png" alt="Kids MMA">
+                        <div class="program-overlay"></div>
                     </div>
-                </button>
+                    <div class="program-card-content">
+                        <div class="program-icon">🥋</div>
+                        <h3 class="program-title">Kids MMA</h3>
+                        <p class="program-description">Martial arts program for ages 5-16. Tuesdays & Thursdays with age-appropriate classes and certified instructors.</p>
+                        <div class="program-features">
+                            <span class="feature-badge">Ages 5-16</span>
+                            <span class="feature-badge">Tues & Thurs</span>
+                            <span class="feature-badge">Certified</span>
+                        </div>
+                        <a href="kids-mma.html" class="program-btn">View Program →</a>
+                    </div>
+                </div>
+
+                <!-- Sports Conditioning -->
+                <div class="program-card">
+                    <div class="program-card-image">
+                        <img src="images/img3.jpg" alt="Sports Conditioning">
+                        <div class="program-overlay"></div>
+                    </div>
+                    <div class="program-card-content">
+                        <div class="program-icon">⚡</div>
+                        <h3 class="program-title">Sports Conditioning</h3>
+                        <p class="program-description">Elite training for athletes. Agility, strength, speed, and explosiveness development with proven results.</p>
+                        <div class="program-features">
+                            <span class="feature-badge">Agility</span>
+                            <span class="feature-badge">Strength</span>
+                            <span class="feature-badge">Speed</span>
+                            <span class="feature-badge">Explosiveness</span>
+                        </div>
+                        <a href="sports-conditioning.html" class="program-btn">Explore →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sports Conditioning Sub-Categories -->
+            <div class="sports-conditioning-details">
+                <h2 class="section-subtitle">Sports Conditioning Specializations</h2>
+                <div class="conditioning-grid">
+                    <div class="conditioning-card">
+                        <div class="conditioning-icon">🏃</div>
+                        <h3>Agility Training</h3>
+                        <p>Sport-specific drills and techniques to enhance movement efficiency and coordination.</p>
+                        <ul class="conditioning-features">
+                            <li>Ladder Drills</li>
+                            <li>Cone Work</li>
+                            <li>Direction Changes</li>
+                        </ul>
+                    </div>
+                    <div class="conditioning-card">
+                        <div class="conditioning-icon">💪</div>
+                        <h3>Strength Development</h3>
+                        <p>Periodization and power training programs for maximum athletic performance.</p>
+                        <ul class="conditioning-features">
+                            <li>Periodization</li>
+                            <li>Power Training</li>
+                            <li>Progressive Overload</li>
+                        </ul>
+                    </div>
+                    <div class="conditioning-card">
+                        <div class="conditioning-icon">⚡</div>
+                        <h3>Speed Enhancement</h3>
+                        <p>Sprint mechanics and acceleration training for explosive speed gains.</p>
+                        <ul class="conditioning-features">
+                            <li>Sprint Mechanics</li>
+                            <li>Acceleration</li>
+                            <li>Top Speed</li>
+                        </ul>
+                    </div>
+                    <div class="conditioning-card">
+                        <div class="conditioning-icon">🔥</div>
+                        <h3>Explosiveness Coaching</h3>
+                        <p>Plyometrics and reactive training for maximum power output.</p>
+                        <ul class="conditioning-features">
+                            <li>Plyometrics</li>
+                            <li>Reactive Training</li>
+                            <li>Power Development</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 5: Media/Images Gallery - Expanding Card Gallery -->
+    <!-- Section 5: Media/Images Gallery -->
     <section id="media" class="media-section">
         <div class="gallery-background-image"></div>
         <div class="container">
-            <h2 class="section-title">Our <span class="accent">Gallery</span></h2>
+            <h2 class="section-title">Our Gallery</h2>
             <div class="expanding-gallery">
-                <div class="expanding-card" data-card="1">
+                <div class="expanding-card">
                     <div class="card-image">
-                        <img src="images/forverfit img1.jpg" alt="Crossfit Training" loading="lazy">
+                        <img src="images/forverfit img1.jpg" alt="Crossfit" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Crossfit</h3>
-                        <p class="card-description">High-intensity functional training that combines strength, cardio, and flexibility for ultimate fitness results.</p>
+                        <p class="card-description">High-intensity functional training</p>
                     </div>
                 </div>
-                <div class="expanding-card" data-card="2">
+                <div class="expanding-card">
                     <div class="card-image">
                         <img src="images/FF img2.jpg" alt="Weight Training" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Weight Training</h3>
-                        <p class="card-description">Build strength and muscle with our premium equipment and expert-guided training programs.</p>
+                        <p class="card-description">Build strength and muscle</p>
                     </div>
                 </div>
-                <div class="expanding-card" data-card="3">
+                <div class="expanding-card">
                     <div class="card-image">
                         <img src="images/img3.jpg" alt="Cardio Fitness" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Cardio Fitness</h3>
-                        <p class="card-description">Boost your endurance and cardiovascular health with our state-of-the-art cardio equipment.</p>
+                        <p class="card-description">Boost endurance</p>
                     </div>
                 </div>
-                <div class="expanding-card" data-card="4">
+                <div class="expanding-card">
                     <div class="card-image">
                         <img src="images/splash enhanced.jpeg" alt="Group Classes" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Group Classes</h3>
-                        <p class="card-description">Join our energetic group sessions including Zumba, Yoga, and HIIT for motivation and fun.</p>
+                        <p class="card-description">Zumba, Yoga, HIIT</p>
                     </div>
                 </div>
-                <div class="expanding-card" data-card="5">
+                <div class="expanding-card">
                     <div class="card-image">
                         <img src="images/WhatsApp Image 2025-11-19 at 16.18.46_f7d66fb3.jpg" alt="Personal Training" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Personal Training</h3>
-                        <p class="card-description">One-on-one sessions with certified trainers tailored to your specific fitness goals and needs.</p>
+                        <p class="card-description">One-on-one sessions</p>
                     </div>
                 </div>
             </div>
@@ -332,7 +750,6 @@
 
     <!-- Events & News Feed Section -->
     <section id="events" class="events-section">
-        <div class="events-background-image"></div>
         <div class="container">
             <h2 class="section-title">Events & <span class="accent">News Feed</span></h2>
             <p class="events-subtitle">Stay updated with our latest events, competitions, and gym news</p>
@@ -344,10 +761,8 @@
                 <button class="filter-btn" data-filter="past">Past Events</button>
             </div>
 
-            <!-- Events Feed - Horizontal Carousel -->
-            <div class="events-carousel-wrapper">
-                <button class="carousel-nav-btn carousel-prev" aria-label="Previous events">‹</button>
-                <div class="events-feed">
+            <!-- Events Feed -->
+            <div class="events-feed">
                 <!-- Upcoming Events -->
                 <article class="event-card upcoming" data-category="upcoming">
                     <div class="event-image-container">
@@ -469,8 +884,6 @@
                         <button class="event-btn">View Gallery</button>
                     </div>
                 </article>
-                </div>
-                <button class="carousel-nav-btn carousel-next" aria-label="Next events">›</button>
             </div>
         </div>
     </section>
@@ -528,81 +941,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Mobile App Section -->
-    <section id="mobile-app" class="mobile-app-section">
-        <div class="container">
-            <div class="mobile-app-wrapper">
-                <!-- Mobile App Image (Left Side) -->
-                <div class="mobile-app-image-container">
-                    <img src="images/mobilr app.jpeg" alt="ACTVon6 Mobile App" class="mobile-app-image">
-                </div>
-                
-                <!-- Mobile App Content (Right Side) -->
-                <div class="mobile-app-content">
-                    <h2 class="mobile-app-title">Forever Gym</h2>
-                    <h3 class="mobile-app-subtitle">Hybrid Training Mobile Application</h3>
-                    <p class="mobile-app-description">AI-Powered Fitness Companion</p>
-                    
-                    <div class="mobile-app-info">
-                        <p>Experience the future of fitness with Forever Gym's revolutionary mobile application. Seamlessly track your workouts, leverage artificial intelligence as your personal trainer, and get intelligent guidance for injury recovery and prevention.</p>
-                    </div>
-                    
-                    <!-- AI Features Dropdown Sections -->
-                    <div class="ai-features-container">
-                        <button class="ai-feature-btn" data-feature="ai-trainer">
-                            <span class="ai-icon">🤖</span>
-                            <span class="ai-title">AI Personal Trainer</span>
-                            <span class="ai-arrow">▼</span>
-                        </button>
-                        <div class="ai-feature-content" id="ai-trainer">
-                            <p>Our advanced AI analyzes your fitness level, goals, and progress to create personalized workout plans. Get real-time form corrections, exercise recommendations, and adaptive training programs that evolve with you.</p>
-                        </div>
-                        
-                        <button class="ai-feature-btn" data-feature="workout-tracking">
-                            <span class="ai-icon">📊</span>
-                            <span class="ai-title">Seamless Workout Tracking</span>
-                            <span class="ai-arrow">▼</span>
-                        </button>
-                        <div class="ai-feature-content" id="workout-tracking">
-                            <p>Track every rep, set, and exercise with intelligent logging. The app automatically recognizes exercises, counts repetitions, and monitors your progress over time. Sync seamlessly across all your devices.</p>
-                        </div>
-                        
-                        <button class="ai-feature-btn" data-feature="injury-prevention">
-                            <span class="ai-icon">🛡️</span>
-                            <span class="ai-title">Injury Recovery & Prevention</span>
-                            <span class="ai-arrow">▼</span>
-                        </button>
-                        <div class="ai-feature-content" id="injury-prevention">
-                            <p>AI-powered movement analysis helps prevent injuries before they happen. Get personalized recovery plans, exercise modifications, and rehabilitation guidance tailored to your specific needs and limitations.</p>
-                        </div>
-                        
-                        <button class="ai-feature-btn" data-feature="smart-insights">
-                            <span class="ai-icon">💡</span>
-                            <span class="ai-title">Smart Insights & Analytics</span>
-                            <span class="ai-arrow">▼</span>
-                        </button>
-                        <div class="ai-feature-content" id="smart-insights">
-                            <p>Receive intelligent insights about your training patterns, recovery needs, and performance trends. The AI learns from your data to provide actionable recommendations for optimal results.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Download Buttons -->
-                    <div class="download-buttons">
-                        <a href="https://apps.apple.com/app/forevergym" target="_blank" class="download-btn download-apple">
-                            <span class="download-icon">📱</span>
-                            <span class="download-text">DOWNLOAD</span>
-                        </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.forevergym" target="_blank" class="download-btn download-android">
-                            <span class="download-icon">📱</span>
-                            <span class="download-text">DOWNLOAD</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <!-- Footer -->
     <footer class="footer">

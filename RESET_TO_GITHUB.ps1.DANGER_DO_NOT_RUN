@@ -1,0 +1,9 @@
+Write-Host "Resetting to GitHub version..." -ForegroundColor Yellow
+git fetch origin
+git reset --hard origin/main
+git clean -fd
+Write-Host "Done! Your files now match GitHub." -ForegroundColor Green
+Read-Host "Press Enter to exit"
+
+
+

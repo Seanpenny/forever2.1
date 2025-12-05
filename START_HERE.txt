@@ -1,0 +1,26 @@
+========================================
+QUICK START - COPY THIS PROMPT
+========================================
+
+When you open your NEW folder, paste this prompt:
+
+---
+
+I need to restore my Forever Fit website project. My files are corrupted. 
+
+VERCEL SITE (must match 100%): https://forever-fit-website.vercel.app/
+GITHUB REPO: https://github.com/Seanpenny/forever_fit_website
+
+Download these files from GitHub and create a clean project:
+1. https://raw.githubusercontent.com/Seanpenny/forever_fit_website/main/index.html
+2. https://raw.githubusercontent.com/Seanpenny/forever_fit_website/main/css/styles.css
+3. https://raw.githubusercontent.com/Seanpenny/forever_fit_website/main/js/main.js
+
+Scan the Vercel site to verify all sections match. Create index.html, css/styles.css, js/main.js folders/files. Ensure 100% match with Vercel. Make it work fast - I need to start coding immediately.
+
+---
+
+That's it! Just copy and paste when you open the new folder.
+
+
+
