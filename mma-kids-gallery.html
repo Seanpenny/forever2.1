@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Forever Fit Gym - MMA Kids Gallery">
+    <title>MMA Kids Gallery - Forever Fit</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Top Navigation Section -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/splash enhanced.jpeg" alt="Forever Fit Logo" class="logo-image">
+                <h1>FOREVER FIT</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#about" class="dropdown-toggle">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="leadership.html">Leaders & Founders</a></li>
+                        <li><a href="personal-trainers.html">Personal Trainers</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#programs" class="dropdown-toggle">Programs</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="kids-mma.html">Kids MMA</a></li>
+                        <li><a href="index.html#programs">Run Club</a></li>
+                        <li><a href="index.html#programs">MMA</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#media">Media</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MMA Kids Gallery Section -->
+    <section id="mma-kids-gallery" class="gallery-page-section">
+        <div class="gallery-page-background"></div>
+        <video class="gallery-page-video" muted loop playsinline>
+            <source src="images/MMAKIDS/mma_kids_vid.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+            <h1 class="gallery-page-title">MMA <span class="accent">Kids</span> Gallery</h1>
+            <p class="gallery-page-subtitle">Young champions training hard and having fun</p>
+            
+            <!-- Gallery Carousel -->
+            <div class="gallery-carousel-wrapper">
+                <button class="gallery-carousel-arrow gallery-carousel-arrow-left" aria-label="Previous image">‹</button>
+                <div class="gallery-carousel">
+                    <div class="gallery-carousel-track">
+                        <div class="gallery-carousel-slide">
+                            <img src="images/MMAKIDS/MMAKIDS1.jpg" alt="MMA Kids Training 1" class="gallery-carousel-image">
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <img src="images/MMAKIDS/MMAKIDS2.jpg" alt="MMA Kids Training 2" class="gallery-carousel-image">
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <img src="images/MMAKIDS/MMAKIDS3.jpg" alt="MMA Kids Training 3" class="gallery-carousel-image">
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <img src="images/MMAKIDS/MMAKIDS4.jpg" alt="MMA Kids Training 4" class="gallery-carousel-image">
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <img src="images/MMAKIDS/MMAKDIS5.jpg" alt="MMA Kids Training 5" class="gallery-carousel-image">
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <img src="images/MMAKIDS/MMAKIDSGROUP.jpg" alt="MMA Kids Group" class="gallery-carousel-image">
+                        </div>
+                    </div>
+                </div>
+                <button class="gallery-carousel-arrow gallery-carousel-arrow-right" aria-label="Next image">›</button>
+            </div>
+            
+            <!-- Gallery Thumbnails -->
+            <div class="gallery-thumbnails">
+                <div class="gallery-thumbnail active" data-slide="0">
+                    <img src="images/MMAKIDS/MMAKIDS1.jpg" alt="Thumbnail 1">
+                </div>
+                <div class="gallery-thumbnail" data-slide="1">
+                    <img src="images/MMAKIDS/MMAKIDS2.jpg" alt="Thumbnail 2">
+                </div>
+                <div class="gallery-thumbnail" data-slide="2">
+                    <img src="images/MMAKIDS/MMAKIDS3.jpg" alt="Thumbnail 3">
+                </div>
+                <div class="gallery-thumbnail" data-slide="3">
+                    <img src="images/MMAKIDS/MMAKIDS4.jpg" alt="Thumbnail 4">
+                </div>
+                <div class="gallery-thumbnail" data-slide="4">
+                    <img src="images/MMAKIDS/MMAKDIS5.jpg" alt="Thumbnail 5">
+                </div>
+                <div class="gallery-thumbnail" data-slide="5">
+                    <img src="images/MMAKIDS/MMAKIDSGROUP.jpg" alt="Thumbnail 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery-carousel.js"></script>
+    <script>
+        // MMA Kids Video Fade-in Effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const background = document.querySelector('#mma-kids-gallery .gallery-page-background');
+            const video = document.querySelector('#mma-kids-gallery .gallery-page-video');
+            
+            if (background && video) {
+                // Show image for 3-4 seconds, then fade to video
+                setTimeout(() => {
+                    background.classList.add('faded');
+                    video.classList.add('playing');
+                    video.play().catch(err => {
+                        console.log('Video autoplay prevented:', err);
+                    });
+                }, 3500); // 3.5 seconds
+            }
+        });
+    </script>
+</body>
+</html>
+

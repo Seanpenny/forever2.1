@@ -83,3 +83,4 @@ Create a new dedicated page (`trainers.html`) that will house the enhanced three
 - Scalable structure for future trainer additions
 - Improved user experience with clear role separation
 
+

@@ -36,8 +36,11 @@
     <!-- Hero Section with Welcome Title -->
     <section class="kids-mma-hero">
         <div class="kids-mma-hero-background"></div>
+        <video class="kids-mma-hero-video" autoplay muted loop playsinline>
+            <source src="images/MMAKIDS/mma_kids_vid.mp4" type="video/mp4">
+        </video>
         <div class="container">
-            <h1 class="kids-mma-welcome-title">Welcome to MMA Kids</h1>
+            <h1 class="kids-mma-welcome-title">Kids Forever Fit MMA</h1>
         </div>
     </section>
 
@@ -279,5 +282,23 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Kids MMA Hero Video Fade-in Effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const background = document.querySelector('.kids-mma-hero-background');
+            const video = document.querySelector('.kids-mma-hero-video');
+            
+            if (background && video) {
+                // Show logo image for 3-4 seconds, then fade to video
+                setTimeout(() => {
+                    background.classList.add('faded');
+                    video.classList.add('playing');
+                    video.play().catch(err => {
+                        console.log('Video autoplay prevented:', err);
+                    });
+                }, 3500); // 3.5 seconds
+            }
+        });
+    </script>
 </body>
 </html>

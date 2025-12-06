@@ -137,6 +137,97 @@ body {
     display: none;
 }
 
+/* Dropdown Menu Styles */
+.nav-item-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    font-size: 0.6rem;
+    transition: transform 0.3s ease;
+    color: var(--lime-green);
+    margin-left: 0.4rem;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nav-item-dropdown.active .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(10, 10, 10, 0.98);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    min-width: 180px;
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-item-dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Desktop hover support */
+@media (min-width: 769px) {
+    .nav-item-dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .nav-item-dropdown:hover .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(57, 255, 20, 0.1);
+    color: var(--lime-green);
+    border-left-color: var(--lime-green);
+    padding-left: 1.75rem;
+}
+
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -355,19 +446,26 @@ body {
 }
 
 .hero-title {
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
     font-size: 4rem;
     font-weight: 900;
     color: var(--lime-green);
     margin-bottom: 1rem;
-    letter-spacing: 3px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    letter-spacing: 4px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(57, 255, 20, 0.3);
+    text-transform: uppercase;
+    line-height: 1.1;
 }
 
 .hero-subtitle {
+    font-family: 'Poppins', 'Arial', sans-serif;
     font-size: 1.5rem;
+    font-weight: 600;
     color: var(--text-light);
     margin-bottom: 2rem;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+    line-height: 1.4;
 }
 
 .hero-buttons {
@@ -742,7 +840,20 @@ body {
     margin: 0 auto;
 }
 
-.feature-card:hover {
+.feature-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+}
+
+.feature-card-link h3,
+.feature-card-link p {
+    color: inherit;
+}
+
+.feature-card:hover,
+.feature-card-link:hover {
     border-color: var(--lime-green);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transform: translateY(-5px);
@@ -762,7 +873,8 @@ body {
     background: var(--dark-surface);
 }
 
-.feature-card:hover .feature-icon-wrapper {
+.feature-card:hover .feature-icon-wrapper,
+.feature-card-link:hover .feature-icon-wrapper {
     transform: scale(1.1) rotate(5deg);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
     border-color: var(--lime-green-light);
@@ -776,25 +888,19 @@ body {
     transition: all 0.3s ease;
 }
 
-.feature-card:hover .feature-icon-image {
+.feature-card:hover .feature-icon-image,
+.feature-card-link:hover .feature-icon-image {
     opacity: 1;
     transform: scale(1.1);
 }
 
 .feature-icon-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2.2rem;
-    z-index: 2;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    transition: all 0.3s ease;
+    display: none;
 }
 
-.feature-card:hover .feature-icon-overlay {
-    transform: translate(-50%, -50%) scale(1.2);
-    filter: drop-shadow(0 0 10px var(--lime-green));
+.feature-card:hover .feature-icon-overlay,
+.feature-card-link:hover .feature-icon-overlay {
+    display: none;
 }
 
 .feature-icon {
@@ -2300,7 +2406,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/FF img2.jpg');
+    background-image: url('../images/FUNCTIONALFITNESS/Functional_background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2335,29 +2441,51 @@ body {
     opacity: 0.9;
 }
 
-.programs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-    margin-bottom: 5rem;
+/* Programs Carousel */
+.programs-carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    padding: 0 60px;
+}
+
+.programs-carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.programs-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
 }
 
 .program-card {
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
+    background: rgba(26, 26, 26, 0.8);
+    border: 2px solid transparent;
+    border-radius: 15px;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     position: relative;
-    animation: fadeInUp 0.6s ease-out;
-    animation-fill-mode: both;
+    flex: 0 0 280px;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
-.program-card:nth-child(1) { animation-delay: 0.1s; }
-.program-card:nth-child(2) { animation-delay: 0.2s; }
-.program-card:nth-child(3) { animation-delay: 0.3s; }
-.program-card:nth-child(4) { animation-delay: 0.4s; }
+.program-card:hover {
+    border-color: var(--lime-green);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    background: var(--dark-surface-light);
+}
+
+.program-card-sports.active .sports-conditioning-subfeatures {
+    display: flex;
+}
 
 .program-card:hover {
     transform: translateY(-10px);
@@ -2368,7 +2496,7 @@ body {
 .program-card-image {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 120px;
     overflow: hidden;
 }
 
@@ -2394,16 +2522,38 @@ body {
 }
 
 .program-card-content {
-    padding: 2rem;
+    padding: 1.5rem;
     position: relative;
     z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .program-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     display: inline-block;
-    animation: iconBounce 2s ease-in-out infinite;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--lime-green);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+    transition: all 0.3s ease;
+}
+
+.program-icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.program-card:hover .program-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.5);
+    border-color: var(--lime-green-light);
 }
 
 @keyframes iconBounce {
@@ -2412,18 +2562,19 @@ body {
 }
 
 .program-title {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--lime-green);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
 }
 
 .program-description {
     color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    flex: 1;
 }
 
 .program-features {
@@ -2447,14 +2598,22 @@ body {
     display: inline-block;
     background: var(--lime-green);
     color: var(--text-dark);
-    padding: 0.8rem 2rem;
-    border-radius: 25px;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.program-btn-toggle {
+    margin-top: auto;
 }
 
 .program-btn:hover {
@@ -2463,11 +2622,383 @@ body {
     box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Sports Conditioning Details */
+/* Carousel Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid var(--lime-green);
+    color: var(--lime-green);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-arrow-left {
+    left: 0;
+}
+
+.carousel-arrow-right {
+    right: 0;
+}
+
+.carousel-arrow:hover {
+    background: var(--lime-green);
+    color: var(--text-dark);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Sports Conditioning Sub-Features */
+.sports-conditioning-subfeatures {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideDown 0.3s ease-out;
+}
+
+.program-card-sports.active .sports-conditioning-subfeatures {
+    display: flex;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.conditioning-sub-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.conditioning-sub-card:hover {
+    border-color: var(--lime-green);
+    background: rgba(57, 255, 20, 0.1);
+}
+
+.conditioning-sub-card .conditioning-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 0.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--lime-green);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conditioning-icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.conditioning-sub-card:hover .conditioning-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+}
+
+.conditioning-sub-card h4 {
+    font-size: 0.9rem;
+    color: var(--lime-green);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.conditioning-sub-card p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Mobile Responsive - Programs Carousel & Sports Conditioning */
+@media (max-width: 768px) {
+    .programs-section {
+        padding: 60px 0;
+    }
+    
+    .programs-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .programs-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    /* Programs Carousel Mobile */
+    .programs-carousel-wrapper {
+        padding: 0 50px;
+        margin-bottom: 2rem;
+    }
+    
+    .programs-track {
+        gap: 1.5rem;
+    }
+    
+    .program-card {
+        flex: 0 0 280px;
+        max-width: 280px;
+    }
+    
+    .programs-carousel-wrapper .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .program-card-image {
+        height: 120px;
+    }
+    
+    .program-card-content {
+        padding: 1.5rem;
+    }
+    
+    .program-title {
+        font-size: 1.2rem;
+    }
+    
+    .program-description {
+        font-size: 0.9rem;
+    }
+    
+    .program-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .program-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Sports Conditioning Sub-Features Mobile */
+    .sports-conditioning-subfeatures {
+        gap: 0.8rem;
+        margin-top: 0.8rem;
+        padding-top: 0.8rem;
+    }
+    
+    .conditioning-sub-card {
+        padding: 0.8rem;
+    }
+    
+    .conditioning-sub-card .conditioning-icon {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 0.4rem;
+    }
+    
+    .conditioning-sub-card h4 {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .conditioning-sub-card p {
+        font-size: 0.75rem;
+    }
+    
+    /* Ensure carousel works smoothly on mobile */
+    .programs-carousel {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .programs-carousel::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Make Sports Conditioning card expand better on mobile */
+    .program-card-sports.active {
+        min-height: auto;
+    }
+    
+    .program-card-sports.active .program-card-content {
+        padding-bottom: 1.5rem;
+    }
+    
+    /* About Section Feature Cards Mobile */
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .feature-card {
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .programs-section {
+        padding: 40px 0;
+    }
+    
+    .programs-main-title {
+        font-size: 2rem;
+    }
+    
+    .programs-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Programs Carousel Small Mobile */
+    .programs-carousel-wrapper {
+        padding: 0 40px;
+    }
+    
+    .program-card {
+        flex: 0 0 260px;
+        max-width: 260px;
+    }
+    
+    .programs-carousel-wrapper .carousel-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .program-card-image {
+        height: 100px;
+    }
+    
+    .program-card-content {
+        padding: 1.2rem;
+    }
+    
+    .program-title {
+        font-size: 1.1rem;
+    }
+    
+    .program-description {
+        font-size: 0.85rem;
+    }
+    
+    .program-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .program-features {
+        gap: 0.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-badge {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+    
+    .program-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.7rem;
+    }
+    
+    /* Sports Conditioning Sub-Features Small Mobile */
+    .sports-conditioning-subfeatures {
+        gap: 0.6rem;
+    }
+    
+    .conditioning-sub-card {
+        padding: 0.6rem;
+    }
+    
+    .conditioning-sub-card .conditioning-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .conditioning-sub-card h4 {
+        font-size: 0.8rem;
+    }
+    
+    .conditioning-sub-card p {
+        font-size: 0.7rem;
+    }
+    
+    /* About Section Small Mobile */
+    .about-features {
+        gap: 1.2rem;
+    }
+    
+    .feature-card {
+        padding: 1.2rem;
+    }
+    
+    .feature-icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Sports Conditioning Details - Removed */
 .sports-conditioning-details {
-    margin-top: 5rem;
-    padding-top: 3rem;
-    border-top: 2px solid rgba(255, 255, 255, 0.15);
+    display: none;
+}
+
+/* Mobile: Make Sports Conditioning card expand smoothly */
+@media (max-width: 768px) {
+    .program-card-sports {
+        transition: all 0.3s ease;
+    }
+    
+    .program-card-sports.active {
+        transform: scale(1.02);
+        z-index: 5;
+        box-shadow: 0 8px 25px rgba(57, 255, 20, 0.3);
+    }
+    
+    /* Ensure sub-features don't overflow on mobile */
+    .sports-conditioning-subfeatures {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    /* Better spacing for expanded card on mobile */
+    .program-card-sports.active .program-card-content {
+        min-height: auto;
+    }
 }
 
 .section-subtitle {
@@ -2564,13 +3095,36 @@ body {
     background-image: url('../images/Screenshot 2025-12-01 124404.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.3;
+    z-index: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.kids-mma-hero-background.faded {
+    opacity: 0;
     z-index: 0;
+}
+
+.kids-mma-hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.kids-mma-hero-video.playing {
+    opacity: 0.2;
+    z-index: 1;
 }
 
 .kids-mma-hero .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .kids-mma-welcome-title {
@@ -2593,6 +3147,137 @@ body {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+/* ===== HYBRID FITNESS PAGE STYLES ===== */
+
+/* Hero Section with Welcome Title */
+.hybrid-fitness-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hybrid-fitness-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/FUNCTIONALFITNESS/Functional_background.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.hybrid-fitness-hero-background.faded {
+    opacity: 0;
+    z-index: 0;
+}
+
+.hybrid-fitness-hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hybrid-fitness-hero-video.playing {
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.hybrid-fitness-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hybrid-fitness-welcome-title {
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--lime-green);
+    text-align: center;
+    letter-spacing: 3px;
+    opacity: 0;
+    transform: translateX(-200px);
+    animation: slideInFromLeftWelcome 1s ease-out 0.3s forwards;
+    text-transform: uppercase;
+}
+
+/* Navigation Buttons Section */
+.hybrid-fitness-nav-section {
+    padding: 2rem 0;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.hybrid-nav-buttons-page {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hybrid-nav-btn-page {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.hybrid-nav-btn-page:hover {
+    background: rgba(57, 255, 20, 0.2);
+    border-color: var(--lime-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3);
+}
+
+.hybrid-nav-btn-page.active {
+    background: var(--lime-green);
+    color: var(--text-dark);
+    border-color: var(--lime-green);
+    box-shadow: 0 4px 20px rgba(57, 255, 20, 0.5);
+}
+
+.hybrid-fitness-content-section {
+    display: none;
+    padding: 60px 0;
+    background: var(--dark-surface);
+}
+
+.hybrid-fitness-content-section.active {
+    display: block;
+}
+
+.hybrid-fitness-about {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Navigation Buttons Section */
@@ -3670,6 +4355,10 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     z-index: 1;
     margin-left: -20px;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    will-change: transform, flex;
 }
 
 .expanding-card:first-child {
@@ -3701,6 +4390,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    will-change: transform;
 }
 
 .expanding-card:hover .card-image img {
@@ -3787,6 +4477,480 @@ body {
     
     .card-description {
         font-size: 0.8rem;
+    }
+}
+
+/* ===== GALLERY PAGE SECTIONS ===== */
+.gallery-page-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.gallery-page-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 0.2;
+}
+
+/* MMA Kids Gallery Background */
+#mma-kids-gallery .gallery-page-background {
+    background-image: url('../images/MMAKIDS/MMAKIDSGROUP.jpg');
+    opacity: 0.3;
+    z-index: 1;
+}
+
+#mma-kids-gallery .gallery-page-background.faded {
+    opacity: 0;
+    z-index: 0;
+}
+
+/* MMA Kids Gallery Video */
+.gallery-page-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#mma-kids-gallery .gallery-page-video {
+    opacity: 0;
+}
+
+#mma-kids-gallery .gallery-page-video.playing {
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* Crossfit Gallery Background */
+#crossfit-gallery .gallery-page-background {
+    background-image: url('../images/FUNCTIONALFITNESS/Functional_background.jpg');
+}
+
+.gallery-page-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-page-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.gallery-page-title .accent {
+    color: var(--lime-green);
+}
+
+.gallery-page-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+}
+
+/* Gallery Carousel */
+.gallery-carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 60px;
+}
+
+.gallery-carousel {
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.gallery-carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.gallery-carousel-slide {
+    min-width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+.gallery-carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(57, 255, 20, 0.2);
+    border: 2px solid var(--lime-green);
+    color: var(--lime-green);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.gallery-carousel-arrow:hover {
+    background: rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-carousel-arrow-left {
+    left: 0;
+}
+
+.gallery-carousel-arrow-right {
+    right: 0;
+}
+
+/* Gallery Thumbnails */
+.gallery-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-thumbnail {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.gallery-thumbnail:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.gallery-thumbnail.active {
+    border-color: var(--lime-green);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+}
+
+.gallery-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gallery Page Mobile */
+@media (max-width: 768px) {
+    .gallery-page-title {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-page-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-carousel-wrapper {
+        padding: 0 50px;
+    }
+    
+    .gallery-carousel-slide {
+        height: 400px;
+    }
+    
+    .gallery-carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .gallery-thumbnail {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-page-title {
+        font-size: 2rem;
+    }
+    
+    .gallery-carousel-slide {
+        height: 300px;
+    }
+    
+    .gallery-thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* ===== GALLERY PAGE SECTIONS ===== */
+.gallery-page-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.gallery-page-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 0.2;
+}
+
+/* MMA Kids Gallery Background */
+#mma-kids-gallery .gallery-page-background {
+    background-image: url('../images/MMAKIDS/MMAKIDSGROUP.jpg');
+    opacity: 0.3;
+    z-index: 1;
+}
+
+#mma-kids-gallery .gallery-page-background.faded {
+    opacity: 0;
+    z-index: 0;
+}
+
+/* MMA Kids Gallery Video */
+.gallery-page-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#mma-kids-gallery .gallery-page-video {
+    opacity: 0;
+}
+
+#mma-kids-gallery .gallery-page-video.playing {
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* Crossfit Gallery Background */
+#crossfit-gallery .gallery-page-background {
+    background-image: url('../images/FUNCTIONALFITNESS/Functional_background.jpg');
+}
+
+.gallery-page-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-page-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.gallery-page-title .accent {
+    color: var(--lime-green);
+}
+
+.gallery-page-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+}
+
+/* Gallery Carousel */
+.gallery-carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 60px;
+}
+
+.gallery-carousel {
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.gallery-carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.gallery-carousel-slide {
+    min-width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+.gallery-carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(57, 255, 20, 0.2);
+    border: 2px solid var(--lime-green);
+    color: var(--lime-green);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.gallery-carousel-arrow:hover {
+    background: rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-carousel-arrow-left {
+    left: 0;
+}
+
+.gallery-carousel-arrow-right {
+    right: 0;
+}
+
+/* Gallery Thumbnails */
+.gallery-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-thumbnail {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.gallery-thumbnail:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.gallery-thumbnail.active {
+    border-color: var(--lime-green);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+}
+
+.gallery-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gallery Page Mobile */
+@media (max-width: 768px) {
+    .gallery-page-title {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-page-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-carousel-wrapper {
+        padding: 0 50px;
+    }
+    
+    .gallery-carousel-slide {
+        height: 400px;
+    }
+    
+    .gallery-carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .gallery-thumbnail {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-page-title {
+        font-size: 2rem;
+    }
+    
+    .gallery-carousel-slide {
+        height: 300px;
+    }
+    
+    .gallery-thumbnail {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -5489,12 +6653,51 @@ body {
         left: 0;
     }
 
+    /* Mobile Dropdown Styles */
+    .nav-item-dropdown {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-left: 1rem;
+        border: none;
+        border-left: 2px solid rgba(57, 255, 20, 0.3);
+        background: rgba(57, 255, 20, 0.05);
+        box-shadow: none;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: none;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-item-dropdown.active .dropdown-menu {
+        max-height: 300px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dropdown-menu a {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .dropdown-toggle::after {
+        margin-left: auto;
+    }
+
     .hero-title {
         font-size: 2.5rem;
+        letter-spacing: 2px;
     }
 
     .hero-subtitle {
         font-size: 1.2rem;
+        letter-spacing: 0.5px;
     }
     
     .hero-buttons {
@@ -5640,14 +6843,35 @@ body {
         margin-bottom: 2rem;
     }
     
-    .programs-grid {
-        grid-template-columns: 1fr;
+    /* Programs Carousel Mobile */
+    .programs-carousel-wrapper {
+        padding: 0 50px;
+        margin-bottom: 2rem;
+    }
+    
+    .programs-track {
         gap: 1.5rem;
-        margin-bottom: 3rem;
+    }
+    
+    .program-card {
+        flex: 0 0 280px;
+        max-width: 280px;
+    }
+    
+    .programs-carousel-wrapper .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
     
     .program-card-image {
-        height: 200px;
+        height: 120px;
     }
     
     .program-card-content {
@@ -5655,7 +6879,59 @@ body {
     }
     
     .program-title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+    
+    .program-description {
+        font-size: 0.9rem;
+    }
+    
+    .program-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .program-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Sports Conditioning Sub-Features Mobile */
+    .sports-conditioning-subfeatures {
+        gap: 0.8rem;
+        margin-top: 0.8rem;
+        padding-top: 0.8rem;
+    }
+    
+    .conditioning-sub-card {
+        padding: 0.8rem;
+    }
+    
+    .conditioning-sub-card .conditioning-icon {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 0.4rem;
+    }
+    
+    .conditioning-sub-card h4 {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .conditioning-sub-card p {
+        font-size: 0.75rem;
+    }
+    
+    /* About Section Feature Cards Mobile */
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .feature-card {
+        max-width: 100%;
+        margin: 0;
     }
     
     .section-subtitle {
@@ -5863,6 +7139,12 @@ body {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
     }
 
     .cta-button {
@@ -5930,6 +7212,42 @@ body {
     
     .btn-content p {
         font-size: 0.7rem;
+    }
+}
+
+/* ===== HYBRID FITNESS PAGE RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hybrid-fitness-welcome-title {
+        font-size: 2.5rem;
+        padding: 0 1rem;
+        letter-spacing: 2px;
+    }
+    
+    .hybrid-fitness-nav-section {
+        top: 60px;
+        padding: 1rem 0;
+    }
+    
+    .hybrid-nav-buttons-page {
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+    
+    .hybrid-nav-btn-page {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hybrid-fitness-welcome-title {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .hybrid-nav-btn-page {
+        padding: 0.6rem 1rem;
+        font-size: 0.75rem;
     }
 }
 

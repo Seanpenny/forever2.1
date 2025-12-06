@@ -17,13 +17,68 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-menu a');
+    // Dropdown Menu Toggle - Handle multiple dropdowns
+    const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
+    
+    dropdownItems.forEach(dropdownItem => {
+        const dropdownToggle = dropdownItem.querySelector('.dropdown-toggle');
+        
+        if (dropdownToggle) {
+            // Click handler for mobile/desktop
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Close other dropdowns
+                dropdownItems.forEach(item => {
+                    if (item !== dropdownItem) {
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdownItem.classList.toggle('active');
+            });
+
+            // Close dropdown on window resize (desktop to mobile)
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    dropdownItem.classList.remove('active');
+                }
+            });
+        }
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        dropdownItems.forEach(dropdownItem => {
+            if (!dropdownItem.contains(e.target)) {
+                dropdownItem.classList.remove('active');
+            }
+        });
+    });
+
+    // Close menu when clicking on regular nav links (not dropdown)
+    const navLinks = document.querySelectorAll('.nav-menu > li:not(.nav-item-dropdown) > a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
             menuToggle.classList.remove('active');
             menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Close menu when clicking on dropdown links
+    const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            // Close all dropdowns
+            dropdownItems.forEach(item => {
+                item.classList.remove('active');
+            });
         });
     });
 
@@ -362,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         videoPlaying = false;
                         playAttempts++;
                         if (mmaPlayBtn) mmaPlayBtn.style.display = 'flex';
-                        console.log('Video play failed:', error.name);
+                        // Video autoplay prevented by browser
                     });
                 }
             }
@@ -502,9 +557,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const playPromise = simpleMmaVideo.play();
             if (playPromise !== undefined) {
                 playPromise.then(() => {
-                    console.log('Simple MMA video playing successfully');
+                    // Video playing successfully
                 }).catch(error => {
-                    console.log('Simple video autoplay prevented:', error.name);
+                    // Video autoplay prevented by browser
                     document.addEventListener('click', () => simpleMmaVideo.play(), { once: true });
                     document.addEventListener('touchstart', () => simpleMmaVideo.play(), { once: true });
                 });
@@ -800,23 +855,198 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Console log for debugging
-    console.log('Forever Fit website loaded successfully!');
-    console.log('Green theme active with matrix warp effects');
-});
-
-// Handle window resize
-window.addEventListener('resize', function() {
-    const navMenu = document.querySelector('.nav-menu');
-    const menuToggle = document.querySelector('.menu-toggle');
+    // Programs Carousel Functionality
+    const programsCarousel = document.querySelector('.programs-carousel');
+    const programsTrack = document.querySelector('.programs-track');
+    const programCards = document.querySelectorAll('.program-card');
+    const programsLeftArrow = document.querySelector('.programs-carousel-wrapper .carousel-arrow-left');
+    const programsRightArrow = document.querySelector('.programs-carousel-wrapper .carousel-arrow-right');
     
-    if (window.innerWidth > 768 && navMenu) {
-        navMenu.classList.remove('active');
-        if (menuToggle) {
-            menuToggle.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
+    if (programsCarousel && programsTrack && programCards.length > 0) {
+        let currentProgramIndex = 0;
+        let isScrolling = false;
+        const isMobile = window.innerWidth <= 768;
+        
+        function getCardWidth() {
+            if (isMobile) {
+                return programCards[0].offsetWidth + 24; // 1.5rem gap on mobile
+            }
+            return programCards[0].offsetWidth + 32; // 2rem gap on desktop
+        }
+        
+        function updateProgramsCarousel() {
+            if (isScrolling) return;
+            isScrolling = true;
+            
+            const cardWidth = getCardWidth();
+            const totalCards = programCards.length;
+            const visibleCards = Math.floor(programsCarousel.offsetWidth / cardWidth);
+            
+            // On mobile, use smooth scroll
+            if (isMobile) {
+                const scrollPosition = currentProgramIndex * cardWidth;
+                programsTrack.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+            } else {
+                programsTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                programsTrack.style.transform = `translateX(-${currentProgramIndex * cardWidth}px)`;
+            }
+            
+            setTimeout(() => {
+                isScrolling = false;
+            }, 600);
+        }
+        
+        // Arrow navigation
+        if (programsLeftArrow) {
+            programsLeftArrow.addEventListener('click', () => {
+                if (currentProgramIndex > 0) {
+                    currentProgramIndex--;
+                    updateProgramsCarousel();
+                }
+            });
+        }
+        
+        if (programsRightArrow) {
+            programsRightArrow.addEventListener('click', () => {
+                const cardWidth = getCardWidth();
+                const totalCards = programCards.length;
+                const visibleCards = Math.floor(programsCarousel.offsetWidth / cardWidth);
+                if (currentProgramIndex < totalCards - visibleCards) {
+                    currentProgramIndex++;
+                    updateProgramsCarousel();
+                }
+            });
+        }
+        
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let isDragging = false;
+        
+        programsCarousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            isDragging = true;
+        }, { passive: true });
+        
+        programsCarousel.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                // Allow native scrolling
+            }
+        }, { passive: true });
+        
+        programsCarousel.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            touchEndX = e.changedTouches[0].screenX;
+            handleProgramsSwipe();
+            isDragging = false;
+        }, { passive: true });
+        
+        function handleProgramsSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next
+                    const cardWidth = getCardWidth();
+                    const totalCards = programCards.length;
+                    const visibleCards = Math.floor(programsCarousel.offsetWidth / cardWidth);
+                    if (currentProgramIndex < totalCards - visibleCards) {
+                        currentProgramIndex++;
+                        updateProgramsCarousel();
+                    }
+                } else {
+                    // Swipe right - previous
+                    if (currentProgramIndex > 0) {
+                        currentProgramIndex--;
+                        updateProgramsCarousel();
+                    }
+                }
+            }
+        }
+        
+        // Handle window resize - Debounced
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+                const wasMobile = isMobile;
+                const nowMobile = window.innerWidth <= 768;
+                if (wasMobile !== nowMobile) {
+                    currentProgramIndex = 0;
+                    updateProgramsCarousel();
+                }
+            }, 250);
+        });
+    }
+
+    // Sports Conditioning Toggle - Mobile Optimized
+    const sportsConditioningBtn = document.querySelector('.program-btn-toggle[data-toggle="sports-conditioning"]');
+    const sportsConditioningCard = document.querySelector('.program-card-sports');
+    
+    if (sportsConditioningBtn && sportsConditioningCard) {
+        sportsConditioningBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isActive = sportsConditioningCard.classList.contains('active');
+            
+            sportsConditioningCard.classList.toggle('active');
+            
+            // Update button text
+            if (!isActive) {
+                this.textContent = 'Close →';
+                // Scroll to card on mobile when opening
+                if (window.innerWidth <= 768) {
+                    setTimeout(() => {
+                        sportsConditioningCard.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'nearest',
+                            inline: 'center'
+                        });
+                    }, 100);
+                }
+            } else {
+                this.textContent = 'Explore →';
+            }
+        });
+        
+        // Close when clicking outside on mobile
+        if (window.innerWidth <= 768) {
+            document.addEventListener('click', function(e) {
+                if (!sportsConditioningCard.contains(e.target) && 
+                    !sportsConditioningBtn.contains(e.target)) {
+                    if (sportsConditioningCard.classList.contains('active')) {
+                        sportsConditioningCard.classList.remove('active');
+                        sportsConditioningBtn.textContent = 'Explore →';
+                    }
+                }
+            });
         }
     }
+
+    // Console log for debugging
+    // Forever Fit website loaded successfully
+});
+
+// Handle window resize - Debounced resize handler for mobile menu
+let menuResizeTimeout;
+window.addEventListener('resize', function() {
+    clearTimeout(menuResizeTimeout);
+    menuResizeTimeout = setTimeout(function() {
+        const navMenu = document.querySelector('.nav-menu');
+        const menuToggle = document.querySelector('.menu-toggle');
+        
+        if (window.innerWidth > 768 && navMenu) {
+            navMenu.classList.remove('active');
+            if (menuToggle) {
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+    }, 250);
 });
 
 // Keyboard navigation support

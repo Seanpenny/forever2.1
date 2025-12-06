@@ -35,3 +35,4 @@ Write-Host "  - js/main.js" -ForegroundColor White
 Write-Host "  - images/ (all image files)" -ForegroundColor White
 Write-Host "  - assets/ (all assets)" -ForegroundColor White
 
+

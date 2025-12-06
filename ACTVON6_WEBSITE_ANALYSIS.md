@@ -52,3 +52,4 @@ The ACTVon6 website employs a **modern, dark-themed design** with vibrant orange
 ## User Experience Flow
 The website guides users through: Awareness (Hero) → Value Proposition (About/Benefits) → Exploration (Facilities/Classes) → Team Discovery (Trainers/Biokineticists) → Conversion (Membership Plans) → Action (Contact/Join). Each section builds trust and provides clear pathways to engagement.
 
+
